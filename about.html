@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের সম্পর্কে | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- নতুন মেম্বার কার্ড ও শেপ ডিজাইন --- */
+        .team-section {
+            position: relative;
+            padding-bottom: 80px;
+        }
+
+        .highlight-shape {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60%;
+            background: #001f3f; /* ডার্ক ব্লু শেপ */
+            z-index: 1;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .manual-slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .team-card {
+            flex: 0 0 300px;
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .member-img-container {
+            position: relative;
+            width: 100%;
+            height: 320px; 
+        }
+
+        .member-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ছবির ওপর গ্রেডিয়েন্ট ফিনিশ */
+        .member-img-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%; 
+            background: linear-gradient(to bottom, transparent, #ffffff 95%);
+        }
+
+        .member-info {
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html" style="color: #3b82f6;">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="projects.html">প্রোডাক্টস</a>
+            <a href="research.html">রিসার্চ</a>
+        </div>
+    </nav>
+
+    <section class="container py-20">
+        <div class="max-w-4xl">
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">স্বপ্নদ্রষ্টা ও উদ্ভাবক</span>
+            <h1 class="text-5xl font-black mt-6 mb-8 leading-tight" style="color: #001f3f;">আমরা শিখছি, আমরা গড়ছি, <br>আমরা <span class="text-blue-600">উদ্ভাবন করছি</span></h1>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                QORVEX BD একটি উদীয়মান টেক স্টার্টআপ যা একদল স্বপ্নবাজ তরুণদের হাত ধরে শুরু হয়েছে। আমাদের বড় কোনো অফিস বা শত শত অ্যাওয়ার্ড নেই, কিন্তু আমাদের আছে আধুনিক প্রযুক্তির প্রতি গভীর আগ্রহ এবং হার্ডওয়্যার নিয়ে নতুন কিছু করার তীব্র ইচ্ছা। 
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-20">
+        <div class="container flex flex-col gap-12">
+            <div class="main-card p-10 bg-white shadow-sm border border-gray-100 rounded-xl">
+                <h3 class="text-3xl font-bold mb-6 text-blue-600">আমাদের লক্ষ্য</h3>
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    QORVEX BD-এর মূল লক্ষ্য হলো প্রযুক্তির জটিলতাকে সাধারণ মানুষের কাছে সহজবোধ্য এবং সাশ্রয়ী করে তোলা। আমরা বিশ্বাস করি যে, উদ্ভাবন কেবল বড় কোনো ল্যাবরেটরিতে সীমাবদ্ধ থাকা উচিত নয়; বরং এটি প্রতিটি শিক্ষার্থীর টেবিলে পৌঁছানো উচিত। আমাদের প্রাথমিক উদ্দেশ্য হলো বাংলাদেশের তরুণ প্রজন্মকে বিশেষ করে শিক্ষার্থীদের রোবোটিক্স, আইওটি (IoT) এবং অটোমেশন সেক্টরে দক্ষ করে তোলা। বর্তমান বিশ্বে হার্ডওয়্যার ইঞ্জিনিয়ারিংয়ের গুরুত্ব অপরিসীম, অথচ সঠিক দিকনির্দেশনা ও সস্তা উপকরণের অভাবে অনেক প্রতিভা অঙ্কুরেই বিনষ্ট হয়। আমরা সেই অভাব পূরণে কাজ করছি। আমরা এমন একটি ইকোসিস্টেম তৈরি করতে চাই যেখানে হাতে-কলমে শিক্ষার মাধ্যমে শিক্ষার্থীরা বাস্তব জীবনের ছোট ছোট সমস্যার স্মার্ট সমাধান তৈরি করতে পারবে। সহজ ভাষায় বলতে গেলে, আমরা কেবল যন্ত্র তৈরি করি না, আমরা আগামী দিনের উদ্ভাবকদের তৈরির ক্ষেত্র প্রস্তুত করছি। প্রযুক্তির এই লড়াইয়ে আমরা প্রতিটি ধাপে উদ্ভাবনকে অগ্রাধিকার দিয়ে যাচ্ছি।
+                </p>
+            </div>
+
+            <div class="main-card p-10 bg-white shadow-sm border border-gray-100 rounded-xl">
+                <h3 class="text-3xl font-bold mb-6 text-blue-600">আমাদের ভিশন</h3>
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    আমাদের দীর্ঘমেয়াদী ভিশন হলো ভবিষ্যতে বাংলাদেশকে একটি প্রযুক্তি-নির্ভর এবং স্বয়ংক্রিয় (Autonomous) রাষ্ট্রে রূপান্তর করতে সক্রিয় ভূমিকা রাখা। QORVEX BD-কে আমরা কেবল একটি স্টার্টআপ হিসেবে দেখি না, বরং এটিকে হার্ডওয়্যার এবং অটোমেশন সেক্টরে একটি বিশ্বস্ত গ্লোবাল ব্র্যান্ড হিসেবে প্রতিষ্ঠিত করাই আমাদের মূল লক্ষ্য। আমরা এমন একটি ভবিষ্যৎ স্বপ্ন দেখি যেখানে 'Made in Bangladesh' ট্যাগযুক্ত রোবোটিক ডিভাইস এবং আইওটি সলিউশন বিশ্ববাজারে নিজেদের শ্রেষ্ঠত্ব প্রমাণ করবে। আমরা আমাদের গবেষণার পরিধিকে আরও বিস্তৃত করে স্মার্ট সিটি, কৃষি অটোমেশন এবং শিল্প কারখানায় ব্যবহারের উপযোগী উন্নত সেন্সর সিস্টেম ও এআই ইন্টিগ্রেটেড হার্ডওয়্যার নিয়ে কাজ করার পরিকল্পনা করছি। আমাদের লক্ষ্য হলো স্থানীয় মেধা ও সম্পদ ব্যবহার করে আমদানি নির্ভরতা কমিয়ে স্বনির্ভর বাংলাদেশ গড়ে তোলা। প্রযুক্তির অগ্রযাত্রায় আমরা এমন একটি প্ল্যাটফর্ম হতে চাই যা উদ্ভাবন, সততা এবং কার্যকারিতার প্রতীক হয়ে থাকবে। আমাদের এই স্বপ্নযাত্রায় আমরা প্রতিটি সীমাবদ্ধতাকে সম্ভাবনায় রূপান্তর করতে দৃঢ়প্রতিজ্ঞ।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section py-24 overflow-hidden">
+        <div class="container relative z-10 mb-12">
+            <h2 class="section-title">আমরা TEAM <span class="text-blue-600">QORVEX</span></h2>
+            <p class="text-gray-500">যারা এই ছোট উদ্যোগটিকে বড় করার জন্য কাজ করে যাচ্ছে</p>
+        </div>
+
+        <div class="manual-slider-container">
+            <div class="highlight-shape"></div>
+            
+            <div class="slider-track" id="sliderTrack">
+                <div class="team-card" onclick="window.location.href='profile-founder.html'">
+                    <div class="member-img-container">
+                        <img src="assets/images/members/member1.jpg" alt="Founder">
+                    </div>
+                    <div class="member-info">
+                        <h4 class="text-xl font-bold" style="color: #001f3f;">আরিফুল ইসলাম</h4>
+                        <p class="text-blue-600 text-sm font-semibold mb-3">Founder & Lead Engineer</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">ডিপ্লোমা ইন ইঞ্জিনিয়ারিং ইলেকট্রিক্যাল টেকনলোজিতে অধ্যায়নরত।</p>
+                    </div>
+                </div>
+
+                <div class="team-card" onclick="window.location.href='profile-co-founder.html'">
+                    <div class="member-img-container">
+                        <img src="assets/images/members/member2.jpg" alt="Co-Founder">
+                    </div>
+                    <div class="member-info">
+                        <h4 class="text-xl font-bold" style="color: #001f3f;">মোঃ রিফাত আল নাঈম</h4>
+                        <p class="text-blue-600 text-sm font-semibold mb-3">Co-Founder & Technical Coordinator</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">ডিপ্লোমা ইন ইঞ্জিনিয়ারিং ইলেকট্রিক্যাল টেকনলোজিতে অধ্যায়নরত।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

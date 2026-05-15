@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রিসার্চ | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* প্রজেক্ট কার্ডের সাথে মিল রেখে স্টাইল */
+        .research-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .research-card:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html" style="color: #3b82f6;">রিসার্চ</a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto text-center py-16 px-6">
+        <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight" style="color: #001f3f;">গবেষণা ও <span class="text-blue-600">উন্নয়ন</span></h1>
+        <p class="text-xl max-w-3xl mx-auto text-gray-600">ভবিষ্যৎ প্রযুক্তি ও উদ্ভাবনী সমাধান নিয়ে আমাদের গবেষণাপত্রসমূহ।</p>
+    </header>
+
+    <main class="container mx-auto px-6 mb-24">
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <div class="research-card p-10 rounded-2xl cursor-pointer text-center" onclick="location.href='research-sound-to-electricity.html'">
+                <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-bolt text-3xl text-blue-600"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4" style="color: #001f3f;">শব্দ শক্তি থেকে বৈদ্যুতিক শক্তি</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    আমাদের আশেপাশে অনেক শব্দদুষণ হয় যেটা নিয়ন্ত্রণ করা সম্ভব হচ্ছে না। আমাদের গবেষণার বিষয় হলো কিভাবে এই দূষণকে কাজে লাগিয়ে বিদ্যুৎ উৎপাদন করা সম্ভব।
+                </p>
+            </div>
+
+            <div class="research-card p-10 rounded-2xl cursor-pointer text-center" onclick="location.href='#'">
+                <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fas fa-atom text-3xl text-blue-600"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4" style="color: #001f3f;">নতুন গবেষণা আসছে...</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    নতুন গবেষণাপত্র এবং প্রযুক্তিগত উন্নয়নের আপডেট এখানে শীঘ্রই প্রকাশ করা হবে।
+                </p>
+            </div>
+         
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

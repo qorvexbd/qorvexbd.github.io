@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOST Desk Companion | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Products.html এর সাথে মিল রেখে কাস্টম স্টাইল */
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #f1f5f9;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #f8fafc 0%, #ffffff 50%);
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        /* ভিডিও কন্টেইনার রেসপন্সিভ করার জন্য */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="products.html" style="color: #3b82f6;">প্রোডাক্টস</a> 
+            <a href="research.html">রিসার্চ</a>
+        </div>
+    </nav>
+
+    <header class="hero-gradient pt-24 pb-16 px-6">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative flex justify-center order-2 md:order-1">
+                <div class="absolute inset-0 bg-blue-200 rounded-full filter blur-3xl opacity-20 transform scale-75"></div>
+                <img src="assets/images/products/p2.jpg" alt="NODE PRO" class="rounded-[40px] shadow-2xl z-10 floating border-8 border-white w-full max-w-md">
+            </div>
+
+            <div class="space-y-6 order-1 md:order-2 text-center md:text-left">
+                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold tracking-widest uppercase">
+                    QORVEX Signature Series
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight" style="color: #001f3f;">
+                    NODE PRO <span class="text-blue-600">Smart</span> Home Controller
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    আপনার রুমের লোডগুলোকে শিডিউলের আওতায় নিয়ে আসুন NODE PRO এর সাথে। NODE PRO আপনার বিদ্যুৎ সাশ্রয়ের জন্য উপযোগী।
+                </p>
+                
+                <div class="flex items-center justify-center md:justify-start gap-6 py-4">
+                    <div>
+                        <p class="text-gray-400 line-through text-lg">৳1300</p>
+                        <p class="text-4xl font-black text-blue-600">৳1100</p>
+                    </div>
+                    <div class="h-12 w-[2px] bg-gray-200"></div>
+                    <span class="bg-green-100 text-green-700 px-4 py-1 rounded-lg font-bold">১৫% ছাড়</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/8801743970799" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-center hover:bg-blue-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-200">
+                        <i class="fas fa-bolt"></i> প্রি-অর্ডার করুন
+                    </a>
+                    <a href="#video-demo" class="border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold text-center hover:bg-gray-50 transition-all">
+                        ভিডিও ডেমো দেখুন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 container mx-auto px-6">
+        <div class="flex items-center gap-4 mb-12">
+            <div class="h-1 w-12 bg-blue-600"></div>
+            <h2 class="text-3xl font-bold" style="color: #001f3f;">মূল <span class="text-blue-600">ফিচারসমূহ</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">স্মার্টফোনের মাধ্যমে কন্ট্রোল</h4>
+                <p class="text-gray-600 text-sm">আপনার হাতে থাকা স্মার্টফোনের মাধ্যমেই মুহুর্তেই আপনার লোড গুলোকে কন্ট্রোল করতে পারবেন।</p>
+            </div>
+
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">ইউজার ফ্রেন্ডলি ওয়েব ইন্টারফেস</h4>
+                <p class="text-gray-600 text-sm">ইউজারের সুবিধার কথা মাথায় রেখে খুব সহজ ইন্টারফেসে ড্যাশবোর্ডটি ডিজাইন করা হয়েছে যা যে কেউ ব্যবহার করতে পারবে। </p>
+            </div>
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-power-off"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">ফিজিক্যাল টাচ বাটনের মাধ্যমে নিয়ন্ত্রন</h4>
+                <p class="text-gray-600 text-sm">NODE PRO তে রয়েছে ফিজিক্যাল ৩ টি টাচ বাটন যা দিয়ে আপনি স্মার্টফোনের পাশাপাশি লোড অন অফ করতে পারবেন। </p>
+            </div>
+
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">পারসোনাল অ্যালার্ম</h4>
+                <p class="text-gray-600 text-sm">আপনার নির্দিষ্ট কাজের জন্য পারসোনাল এলার্ম সিস্টেম আছে যা বিকট শব্দে আপনার কাজ মনে করিয়ে দেয়। </p>
+            </div>
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">বিপ ফিডব্যাক</h4>
+                <p class="text-gray-600 text-sm">সকল কমান্ড বিপ সাউন্ড এর মাধ্যমে আপনাকে নিশ্চিত করে। </p>
+            </div>
+           <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">লোড অটোমেশন</h4>
+                <p class="text-gray-600 text-sm">ইচ্ছামত সময়ে লোড স্বয়ংক্রিয় চালু এবং বন্ধ করার সুবিধা। </p>
+            </div> 
+           <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">রিয়্যাল টাইম স্টাটাস</h4>
+                <p class="text-gray-600 text-sm">আপনার NODE PRO এর সকল কার্যক্রম এর স্টাটাস লাইভ ড্যাশবোর্ডে দেখতে পারবেন।</p>
+            </div>
+            <div class="glass-morphism p-10 rounded-[35px] hover:shadow-xl transition-all group">
+                <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3" style="color: #001f3f;">সহজে স্থাপন</h4>
+                <p class="text-gray-600 text-sm">দেয়াল বা টেবিলে স্থায়ী বা অস্থায়ী স্থাপনযোগ্য। </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-demo" class="bg-slate-50 py-24 border-y border-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #001f3f;">কিভাবে কাজ করে <span class="text-blue-600">দেখুন</span></h2>
+                <p class="text-gray-600">নিচের ভিডিওটিতে NODE PRO Smart Home Controller এর চমৎকার কিছু কার্যাবলী দেখে নিন।</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শব্দ শক্তি থেকে বৈদ্যুতিক শক্তি | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <style>
+        .research-content {
+            line-height: 1.8;
+            color: #334155;
+            text-align: justify;
+        }
+        .research-section-title {
+            color: #001f3f;
+            border-left: 5px solid #3b82f6;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        /* প্রিন্ট বা পিডিএফ এর সময় নেভিগেশন ও ফুটার বাদ দেওয়ার জন্য */
+        @media print {
+            nav, footer, .download-btn-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html" style="color: #3b82f6;">রিসার্চ</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 mt-10 text-right download-btn-container">
+        <button onclick="generatePDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+            <i class="fas fa-file-pdf mr-2"></i> ডাউনলোড পিডিএফ
+        </button>
+    </div>
+
+    <main id="research-paper" class="container mx-auto px-6 py-12 max-w-4xl">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black mb-6 tracking-tight" style="color: #001f3f;">শব্দ শক্তিকে বৈদ্যুতিক শক্তিতে রূপান্তর: একটি বিশ্লেষণাত্মক গবেষণা</h1>
+            <p class="text-lg text-gray-500 italic">প্রকাশিত তারিখ: ১৫ মে, ২০২৬ | QORVEX BD রিসার্চ ডিভিশন</p>
+            <hr class="mt-8 border-gray-200">
+        </header>
+
+        <article class="research-content text-lg">
+            
+            <h2 class="research-section-title text-2xl">১. সারসংক্ষেপ (Abstract)</h2>
+            <p>
+                বর্তমান বিশ্বে শক্তির চাহিদা দিন দিন বৃদ্ধি পাচ্ছে, অন্যদিকে শব্দদূষণ একটি মারাত্মক পরিবেশগত সমস্যায় পরিণত হয়েছে। এই গবেষণার মূল লক্ষ্য হলো পরিবেশের অব্যবহৃত শব্দ শক্তিকে (Acoustic Energy) সংগ্রহ করে তা ব্যবহারযোগ্য বৈদ্যুতিক শক্তিতে রূপান্তর করা। এই প্রক্রিয়ায় পাইজোইলেকট্রিক ট্রান্সডিউসার এবং ইলেক্ট্রোম্যাগনেটিক ইনডাকশন পদ্ধতি ব্যবহার করে কীভাবে ক্ষুদ্র ও মাঝারি মানের ইলেকট্রনিক ডিভাইস পরিচালনা করা সম্ভব, তা এখানে বিস্তারিত আলোচনা করা হয়েছে।
+            </p>
+
+            <h2 class="research-section-title text-2xl">২. ভূমিকা (Introduction)</h2>
+            <p>
+                শব্দ হলো এক প্রকার যান্ত্রিক শক্তি যা বাতাসের চাপের পরিবর্তনের মাধ্যমে প্রবাহিত হয়। বড় শহরগুলোতে যানবাহন, শিল্প কারখানা এবং জনসমাগম থেকে প্রচুর পরিমাণে শব্দ উৎপন্ন হয়। এই শক্তিটি সাধারণত পরিবেশে হারিয়ে যায়। থার্মোডাইনামিক্সের প্রথম সূত্র অনুযায়ী, শক্তি ধ্বংস করা যায় না, কেবল রূপান্তর করা যায়। আমাদের এই গবেষণায় আমরা শব্দের কম্পনকে কাজে লাগিয়ে ভোল্টেজ উৎপন্ন করার একটি টেকসই মডেল উপস্থাপন করেছি।
+            </p>
+
+            <h2 class="research-section-title text-2xl">৩. তাত্ত্বিক পটভূমি (Theoretical Background)</h2>
+            <p>
+                শব্দ শক্তি থেকে বিদ্যুৎ উৎপাদনের ক্ষেত্রে মূলত দুটি প্রধান নীতি কাজ করে:
+            </p>
+            <ul class="list-disc ml-8 space-y-2">
+                <li><strong>পাইজোইলেকট্রিক ইফেক্ট:</strong> যখন কিছু নির্দিষ্ট পদার্থের (যেমন- Quartz বা PZT) ওপর যান্ত্রিক চাপ বা কম্পন প্রয়োগ করা হয়, তখন সেখানে বৈদ্যুতিক চার্জ উৎপন্ন হয়।</li>
+                <li><strong>ইলেক্ট্রোম্যাগনেটিক ইনডাকশন:</strong> শব্দের কম্পন ব্যবহার করে একটি পাতলা ডায়াফ্রামকে চৌম্বক ক্ষেত্রের ভেতরে নাড়াচাড়া করলে কয়েলের মাধ্যমে বিদ্যুৎ প্রবাহিত হয়।</li>
+            </ul>
+
+            <h2 class="research-section-title text-2xl">৪. গবেষণার কার্যপদ্ধতি (Methodology)</h2>
+            <p>
+                আমরা গবেষণার জন্য একটি বিশেষ 'সাউন্ড হার্ভেস্টিং বক্স' তৈরি করেছি। এর ভেতরে উচ্চ সংবেদনশীল পাইজোইলেকট্রিক ডিস্ক সারিবদ্ধভাবে স্থাপন করা হয়েছে। যখন উচ্চ ডেসিবল (dB) সম্পন্ন শব্দ এই বক্সের ওপর পড়ে, তখন ডিস্কগুলো কম্পিত হয় এবং এসি (AC) ভোল্টেজ তৈরি করে। এই এসি ভোল্টেজকে একটি ফুল-ব্রিজ রেকটিফায়ার সার্কিটের মাধ্যমে ডিসি (DC) ভোল্টেজে রূপান্তর করা হয় এবং একটি সুপার ক্যাপাসিটরে জমা রাখা হয়।
+            </p>
+
+            <h2 class="research-section-title text-2xl">৫. ফলাফল ও বিশ্লেষণ (Results & Analysis)</h2>
+            <p>
+                পরীক্ষামূলক পর্যবেক্ষণে দেখা গেছে যে, ৮০ থেকে ১০০ ডেসিবল শব্দের উপস্থিতিতে (যেমন ব্যস্ত রাস্তার শব্দ) আমাদের সিস্টেমটি প্রায় ১.৫ থেকে ৩.০ ভোল্ট উৎপাদন করতে সক্ষম। যদিও এই শক্তির পরিমাণ বৃহৎ গ্রিডের জন্য যথেষ্ট নয়, তবে এটি কম পাওয়ারের আইওটি (IoT) সেন্সর, স্মার্ট ওয়াচ বা এলএইডি (LED) বাতি জ্বালানোর জন্য যথেষ্ট কার্যকরী।
+            </p>
+
+            <h2 class="research-section-title text-2xl">৬. ভবিষ্যৎ সম্ভাবনা ও সীমাবদ্ধতা</h2>
+            <p>
+                এই প্রযুক্তির প্রধান সীমাবদ্ধতা হলো এর কার্যদক্ষতা (Efficiency)। বর্তমানে খুব অল্প পরিমাণ বিদ্যুৎ পাওয়া যাচ্ছে। তবে ভবিষ্যতে ন্যানো-টেকনোলজি ব্যবহারের মাধ্যমে পাইজোইলেকট্রিক ম্যাটেরিয়ালের উন্নয়ন ঘটানো সম্ভব হলে এটি নবায়নযোগ্য শক্তির একটি প্রধান উৎস হয়ে উঠতে পারে। বিশেষ করে বিমানবন্দর বা রেলওয়ে স্টেশনের মতো জায়গায় যেখানে শব্দের মাত্রা অনেক বেশি, সেখানে এই প্রজেক্টটি অত্যন্ত কার্যকর হবে।
+            </p>
+
+            <h2 class="research-section-title text-2xl">৭. উপসংহার (Conclusion)</h2>
+            <p>
+                শব্দ শক্তি থেকে বিদ্যুৎ উৎপাদন প্রযুক্তিটি এখনো প্রাথমিক পর্যায়ে থাকলেও এর সম্ভাবনা অপরিসীম। QORVEX BD এই গবেষণার মাধ্যমে এটি প্রমাণ করেছে যে, শব্দদূষণকে আমরা সম্পদে রূপান্তর করতে পারি। এটি পরিবেশ রক্ষা এবং শক্তি সাশ্রয়ে এক নতুন দিগন্ত উন্মোচন করবে।
+            </p>
+
+            
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function generatePDF() {
+            const element = document.getElementById('research-paper');
+            const opt = {
+                margin:       [10, 10, 10, 10],
+                filename:     'Research_Sound_to_Electricity_QORVEX_BD.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>

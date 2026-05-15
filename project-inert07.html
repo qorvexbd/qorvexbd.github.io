@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INERT07 - প্রজেক্ট ডিটেইলস | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+            background-color: #f8fafc;
+        }
+        .feature-card:hover {
+            border-color: #3b82f6;
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .tech-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html" style="color: #3b82f6;">প্রজেক্ট</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html">রিসার্চ</a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto py-16 px-6">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <div class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-bold mb-4">স্বায়ত্তশাসিত রোবোটিক্স</div>
+                <h1 class="text-5xl font-black mb-6 tracking-tight" style="color: #001f3f;">INERT07: <span class="text-blue-600">অগ্নিনির্বাপক রোবট</span></h1>
+                <p class="text-xl text-gray-600 leading-relaxed mb-8">
+                    INERT07 একটি আধুনিক সেন্সর-নির্ভর রোবট যা মানুষের ঝুঁকি কমিয়ে অগ্নিকাণ্ডের প্রাথমিক পর্যায়ে স্বয়ংক্রিয়ভাবে আগুন নেভাতে ডিজাইন করা হয়েছে। এটি শিখা সনাক্তকরণ এবং বাধা এড়ানোর প্রযুক্তিতে সজ্জিত।
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-badge">Arduino</span>
+                    <span class="tech-badge">Flame Sensor</span>
+                    <span class="tech-badge">Ultrasonic</span>
+                    <span class="tech-badge">IoT Integration</span>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-50">
+                    <img src="assets/images/projects/inert07.jpg" alt="INERT07 Robot" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 mb-24">
+        
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8" style="color: #001f3f;">প্রজেক্ট ওভারভিউ</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-2xl">
+                    <i class="fas fa-bullseye text-3xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">মূল লক্ষ্য</h4>
+                    <p class="text-gray-600">অগ্নিকাণ্ডের স্থানে মানুষের প্রবেশ ছাড়াই দ্রুত আগুন নিয়ন্ত্রণ করা এবং জানমালের ক্ষয়ক্ষতি কমানো।</p>
+                </div>
+                <div class="feature-card p-8 rounded-2xl">
+                    <i class="fas fa-brain text-3xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">কার্যপদ্ধতি</h4>
+                    <p class="text-gray-600">রোবটটি তার তিনটি ফ্লেম সেন্সরের মাধ্যমে আগুনের ইনফ্রারেড রশ্মি সনাক্ত করে এবং আগুনের দিকে  ঘুরে পাম্প চালু করে।</p>
+                </div>
+                <div class="feature-card p-8 rounded-2xl">
+                    <i class="fas fa-shield-alt text-3xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">নিরাপত্তা ফিচার</h4>
+                    <p class="text-gray-600">আল্ট্রাসনিক সেন্সরের মাধ্যমে এটি আগুনের দূরত্ব পরিমাপ করে নিজে নিরাপদ দূরত্বে থেকে পানি স্প্রে করতে পারে।</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8" style="color: #001f3f;">কারিগরি বৈশিষ্ট্যসমূহ</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100">
+                            <th class="p-4 border-b-2 font-bold">ফিচার</th>
+                            <th class="p-4 border-b-2 font-bold">বিবরণ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Microcontroller</td>
+                            <td class="p-4 border-b text-gray-700">Arduino Uno / ATmega328P</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Detection Sensors</td>
+                            <td class="p-4 border-b text-gray-700">3-Channel Flame Sensor Array</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Obstacle Detect</td>
+                            <td class="p-4 border-b text-gray-700">HC-SR04 Ultrasonic Sensor</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Extinguishing System</td>
+                            <td class="p-4 border-b text-gray-700">5V Water Pump</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Pump Controller</td>
+                            <td class="p-4 border-b text-gray-700">Single Channel Relay Module</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Spray Nozzel</td>
+                            <td class="p-4 border-b text-gray-700">MG90S Metal Gear</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Power Source</td>
+                            <td class="p-4 border-b text-gray-700">4X 3.75V Li-ion Battery</td>
+                        </tr> 
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Power Management</td>
+                            <td class="p-4 border-b text-gray-700">DC Buck Converter</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Motor Driver</td>
+                            <td class="p-4 border-b text-gray-700">L298N Motor Driver</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Front Side Wheel</td>
+                            <td class="p-4 border-b text-gray-700">360° Castor Wheel</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b text-blue-600 font-semibold">Motor</td>
+                            <td class="p-4 border-b text-gray-700">2 Wheel Gear Motor With Wheel</td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
