@@ -563,8 +563,7 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks
 // ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
 // ============================================================
 const DELIVERY_CHARGE_DEFAULT = 100;
-const FREE_DELIVERY_UPAZILA   = "Rangpur Sadar";
-const FREE_DELIVERY_UPAZILA   = "Gangachara";
+const FREE_DELIVERY_UPAZILA   = ["Rangpur Sadar","Gangachara"];
 
 const productCard  = document.getElementById('productCard');
 const PRODUCT_PRICE = parseInt(productCard.getAttribute('data-price')) || 999;
