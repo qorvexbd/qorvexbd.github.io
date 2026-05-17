@@ -557,13 +557,14 @@
 // ============================================================
 // ✅ GOOGLE APPS SCRIPT CONFIG
 // ============================================================
-const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE"; // Deploy করার পর এখানে URL বসান
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec"; // Deploy করার পর এখানে URL বসান
 
 // ============================================================
 // ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
 // ============================================================
 const DELIVERY_CHARGE_DEFAULT = 100;
 const FREE_DELIVERY_UPAZILA   = "Rangpur Sadar";
+const FREE_DELIVERY_UPAZILA   = "Gangachara";
 
 const productCard  = document.getElementById('productCard');
 const PRODUCT_PRICE = parseInt(productCard.getAttribute('data-price')) || 999;
