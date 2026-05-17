@@ -358,17 +358,17 @@
   </div>
 
   <!-- ✅ Product price stored in data attribute for auto-fill -->
-  <div class="product-card" id="productCard" data-price="999" data-old-price="1200" data-discount="16">
+  <div class="product-card" id="productCard" data-price="1100" data-old-price="1300" data-discount="15">
     <div class="product-img-holder">
-      <img src="assets/images/products/p1.jpg" alt="DOST Desk Companion">
+      <img src="assets/images/products/p2.jpg" alt="NODE PRO Smart Home Controller">
     </div>
     <div class="product-info">
       <div class="sub">QORVEX Signature Series</div>
       <h2>NODE PRO Smart Home Controller</h2>
       <div class="price-row">
         <span class="price-now">৳1100</span>
-        <span class="price-old">৳1,300</span>
-        <span class="badge-discount">1% ছাড়</span>
+        <span class="price-old">৳1300</span>
+        <span class="badge-discount">15% ছাড়</span>
       </div>
     </div>
   </div>
@@ -458,7 +458,7 @@
 
       <div class="payment-instruction" id="paymentInsBox">
         <div id="freeDeliveryNote" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:14px; color:#15803d; font-weight:600;">
-          🎉 ${upazila} এর জন্য ডেলিভারি চার্জ সম্পূর্ণ ফ্রি! সরাসরি অর্ডার কনফার্ম করুন।
+          🎉 আপনার এলাকার জন্য ডেলিভারি চার্জ সম্পূর্ণ ফ্রি! সরাসরি অর্ডার কনফার্ম করুন।
         </div>
         <div id="paidDeliveryContent">
           <div class="pay-title">⚠️ অর্ডার কনফার্ম করতে হলে ডেলিভারি চার্জ অগ্রিম প্রদান করতে হবে।</div>
@@ -557,13 +557,13 @@
 // ============================================================
 // ✅ GOOGLE APPS SCRIPT CONFIG
 // ============================================================
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec"; // Deploy করার পর এখানে URL বসান
+const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE"; // Deploy করার পর এখানে URL বসান
 
 // ============================================================
 // ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
 // ============================================================
 const DELIVERY_CHARGE_DEFAULT = 100;
-const FREE_DELIVERY_UPAZILAS   = "Rangpur Sadar", "Gangachara";
+const FREE_DELIVERY_UPAZILA   = "Rangpur Sadar";
 
 const productCard  = document.getElementById('productCard');
 const PRODUCT_PRICE = parseInt(productCard.getAttribute('data-price')) || 999;
@@ -775,7 +775,7 @@ function updateBilling(upazila) {
   const freeNote        = document.getElementById('freeDeliveryNote');
   const paidContent     = document.getElementById('paidDeliveryContent');
 
-  if (FREE_DELIVERY_UPAZILAS.includes(upazila)) {
+  if (upazila === FREE_DELIVERY_UPAZILA) {
     deliveryText.textContent = '৳0 (ফ্রি)';
     codTotal.textContent     = '৳' + PRODUCT_PRICE;
     trxGroup.style.display   = 'none';
