@@ -9,13 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init({publicKey: "pnJy8CpJaV7XHVEOx"});
-  })();
-</script>
+
 
 <style>
   :root {
@@ -561,11 +555,9 @@
 
 <script>
 // ============================================================
-// ✅ EMAILJS CONFIG — এখানে আপনার তথ্য বসান
+// ✅ GOOGLE APPS SCRIPT CONFIG
 // ============================================================
-const EMAILJS_SERVICE_ID  = "service_rkibeda";   // e.g. "service_abc123"
-const EMAILJS_TEMPLATE_ID = "template_9ozexyp";  // e.g. "template_xyz456"
-// Public Key টি উপরে emailjs.init() তে বসানো আছে
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec"; // Deploy করার পর এখানে URL বসান
 
 // ============================================================
 // ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
@@ -853,9 +845,9 @@ function toggleMenu() {
   const orderId   = 'DOST-' + Math.random().toString(36).substr(2,6).toUpperCase();
   const isFreeDel = upazila === FREE_DELIVERY_UPAZILA;
 
-  // EmailJS template params — আপনার template variables এর সাথে মিলিয়ে নিন
-  const templateParams = {
+  const orderData = {
     order_id:        orderId,
+    order_time:      new Date().toLocaleString('bn-BD'),
     customer_name:   document.getElementById('name').value.trim(),
     customer_phone:  document.getElementById('phone').value.trim(),
     division:        document.getElementById('division').value,
@@ -867,19 +859,25 @@ function toggleMenu() {
     delivery_charge: isFreeDel ? 0 : DELIVERY_CHARGE_DEFAULT,
     cod_total:       PRODUCT_PRICE,
     sender_phone:    isFreeDel ? 'N/A' : (document.getElementById('senderPhone').value.trim()),
-    trx_id:          isFreeDel ? 'N/A' : (document.getElementById('trxId').value.trim()),
-    order_time:      new Date().toLocaleString('bn-BD')
+    trx_id:          isFreeDel ? 'N/A' : (document.getElementById('trxId').value.trim())
   };
 
   try {
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-    // Success
-    setLastOrderTime(); // Rate limit timestamp save
-    document.getElementById('orderId').textContent = 'ORDER #' + orderId;
-    document.getElementById('mainForm').style.display = 'none';
-    document.getElementById('successScreen').classList.add('show');
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(orderData)
+    });
+    const result = await response.json();
+    if (result.status === 'success') {
+      setLastOrderTime();
+      document.getElementById('orderId').textContent = 'ORDER #' + orderId;
+      document.getElementById('mainForm').style.display = 'none';
+      document.getElementById('successScreen').classList.add('show');
+    } else {
+      throw new Error(result.message || 'Unknown error');
+    }
   } catch (error) {
-    console.error('EmailJS Error:', error);
+    console.error('Submit Error:', error);
     btn.disabled    = false;
     btn.textContent = '✅ অর্ডার কনফার্ম করুন';
     alert('⚠️ অর্ডার পাঠাতে সমস্যা হয়েছে। ইন্টারনেট সংযোগ চেক করে আবার চেষ্টা করুন।');
