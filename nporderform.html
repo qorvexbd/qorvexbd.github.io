@@ -8,9 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
-
-
-
 <style>
   :root {
     --navy:   #001f3f;
@@ -24,9 +21,7 @@
     --error:  #dc2626;
     --success: #16a34a;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Segoe UI', 'Hind Siliguri', Arial, sans-serif;
     background-color: var(--bg);
@@ -34,20 +29,15 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
-
-
   .wrapper {
     max-width: 700px;
     margin: 0 auto;
     padding: 40px 20px 80px;
   }
-
   .header {
     text-align: center;
     margin-bottom: 36px;
   }
-
   .brand-tag {
     display: inline-block;
     font-size: 11px;
@@ -61,7 +51,6 @@
     border-radius: 20px;
     margin-bottom: 14px;
   }
-
   .header h1 {
     font-size: clamp(26px, 5vw, 38px);
     font-weight: 700;
@@ -73,9 +62,7 @@
     line-height: 1.2;
     margin-bottom: 10px;
   }
-
   .header p { color: var(--muted); font-size: 15px; }
-
   .product-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -89,13 +76,11 @@
     overflow: hidden;
     transition: all 0.3s ease;
   }
-
   .product-card:hover {
     border-color: var(--blue);
     box-shadow: 0 10px 25px rgba(0,0,0,0.07);
     transform: translateY(-3px);
   }
-
   .product-card::before {
     content: '';
     position: absolute;
@@ -103,7 +88,6 @@
     height: 4px;
     background: var(--navy);
   }
-
   .product-img-holder {
     width: 95px; height: 95px;
     border-radius: 12px;
@@ -114,9 +98,7 @@
     display: flex; align-items: center; justify-content: center;
   }
   .product-img-holder img { width: 100%; height: 100%; object-fit: cover; }
-
   .product-info h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-
   .price-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .price-now { font-size: 26px; font-weight: 700; color: var(--navy); }
   .price-old { font-size: 14px; color: #aaa; text-decoration: line-through; }
@@ -129,14 +111,12 @@
     padding: 3px 8px;
     border-radius: 6px;
   }
-
   .form-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 15px;
     padding: 32px 28px;
   }
-
   .form-card h3 {
     font-size: 20px;
     font-weight: 700;
@@ -145,14 +125,12 @@
     border-left: 6px solid var(--navy);
     padding-left: 14px;
   }
-
   .form-card .form-subtitle {
     font-size: 13px;
     color: var(--muted);
     margin-bottom: 24px;
     padding-left: 20px;
   }
-
   .section-label {
     font-size: 10px;
     font-weight: 700;
@@ -165,9 +143,7 @@
     gap: 10px;
   }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
   .form-group { margin-bottom: 18px; }
-
   label {
     display: block;
     font-size: 13px;
@@ -176,7 +152,6 @@
     margin-bottom: 7px;
   }
   label .req { color: #dc2626; margin-left: 3px; }
-
   input[type="text"],
   input[type="tel"],
   select {
@@ -192,16 +167,13 @@
     appearance: none;
     -webkit-appearance: none;
   }
-
   input:focus, select:focus {
     border-color: var(--blue);
     box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
   }
   input.error, select.error { border-color: var(--error); }
-
   .error-msg { font-size: 12px; color: var(--error); margin-top: 5px; display: none; }
   .error-msg.show { display: block; }
-
   .select-wrap { position: relative; }
   .select-wrap::after {
     content: '▾';
@@ -212,7 +184,6 @@
     pointer-events: none;
   }
   select { padding-right: 36px; cursor: pointer; }
-
   .billing-box {
     background: rgba(0,31,63,0.02);
     border: 1px dashed var(--blue);
@@ -234,7 +205,6 @@
     color: var(--navy);
     font-size: 16px;
   }
-
   .payment-instruction {
     background: #fff8f8;
     border: 1px solid #fee2e2;
@@ -255,7 +225,6 @@
     margin-bottom: 12px;
   }
   .pay-steps li { margin-bottom: 4px; }
-
   .submit-btn {
     width: 100%;
     padding: 14px 25px;
@@ -271,7 +240,6 @@
   }
   .submit-btn:hover { background: var(--blue); }
   .submit-btn:disabled { background: #999; cursor: not-allowed; }
-
   .success-screen {
     display: none;
     text-align: center;
@@ -301,8 +269,6 @@
     margin-top: 16px;
     font-weight: 700;
   }
-
-  /* Rate limit block screen */
   .rate-block-screen {
     display: none;
     text-align: center;
@@ -321,7 +287,6 @@
   .rate-block-screen h2 { font-size: 22px; font-weight: 700; color: var(--error); margin-bottom: 10px; }
   .rate-block-screen p { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
   .countdown-text { font-size: 18px; font-weight: 700; color: var(--navy); margin-top: 10px; }
-
   @media (max-width: 768px) {
     .product-card { flex-direction: column; text-align: center; }
     .price-row { justify-content: center; }
@@ -354,10 +319,8 @@
   <div class="header">
     <div class="brand-tag">QORVEX BD · Signature Series</div>
     <h1>অর্ডার ফর্ম</h1>
-    
   </div>
 
-  <!-- ✅ Product price stored in data attribute for auto-fill -->
   <div class="product-card" id="productCard" data-price="1100" data-old-price="1300" data-discount="15">
     <div class="product-img-holder">
       <img src="assets/images/products/p2.jpg" alt="NODE PRO Smart Home Controller">
@@ -377,7 +340,6 @@
     <h3>অর্ডার তথ্য পূরণ করুন</h3>
     <div class="form-subtitle">নিচের ফর্মটি সম্পূর্ণ পূরণ করুন, আমরা শীঘ্রই যোগাযোগ করব।</div>
 
-    <!-- Rate limit block message -->
     <div class="rate-block-screen" id="rateLimitScreen">
       <div class="rate-block-icon">⏳</div>
       <h2>অর্ডার সীমা পৌঁছে গেছে!</h2>
@@ -487,7 +449,7 @@
 
     <div class="success-screen" id="successScreen">
       <div class="success-icon">🎉</div>
-      <h2>অর্ডারটি প্রক্রিয়াধীন রয়েছে!</h2>
+      <h2>অর্ডারটি প্রক্রিয়াধীন রয়েছে!</h2>
       <p>আপনার অর্ডার এবং ডেলিভারি পেমেন্ট ভেরিফাই করা হচ্ছে। আপনার অর্ডার নিশ্চিত করার জন্য শিঘ্রই আপনার সাথে আমরা যোগাযোগ করবো।</p>
       <div class="order-id" id="orderId">ORDER #DOST-XXXX</div>
     </div>
@@ -554,28 +516,18 @@
     </footer>
 
 <script>
-// ============================================================
-// ✅ GOOGLE APPS SCRIPT CONFIG
-// ============================================================
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec"; // Deploy করার পর এখানে URL বসান
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec";
 
-// ============================================================
-// ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
-// ============================================================
 const DELIVERY_CHARGE_DEFAULT = 100;
-const FREE_DELIVERY_UPAZILA   = "Rangpur Sadar";
+const FREE_DELIVERY_UPAZILAS  = ["Rangpur Sadar", "Gangachara"];
 
 const productCard  = document.getElementById('productCard');
 const PRODUCT_PRICE = parseInt(productCard.getAttribute('data-price')) || 999;
 
-// পেমেন্ট সেকশনে প্রোডাক্ট মূল্য অটো সেট
 document.getElementById('productPriceText').textContent = '৳' + PRODUCT_PRICE;
 document.getElementById('codTotalText').textContent     = '৳' + PRODUCT_PRICE;
 
-// ============================================================
-// ✅ RATE LIMITING — 1 ঘন্টায় একটির বেশি অর্ডার নয়
-// ============================================================
-const RATE_LIMIT_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MS = 60 * 60 * 1000;
 const RATE_KEY      = 'qorvex_last_order_ts';
 
 function getLastOrderTime() {
@@ -591,7 +543,6 @@ function getRemainingMs() {
   return elapsed < RATE_LIMIT_MS ? RATE_LIMIT_MS - elapsed : 0;
 }
 
-// যদি ইতিমধ্যে rate limit এ থাকে তাহলে পেজ লোডেই block করুন
 window.addEventListener('DOMContentLoaded', function() {
   const remaining = getRemainingMs();
   if (remaining > 0) {
@@ -624,9 +575,6 @@ function startCountdown(remainingMs) {
   tick();
 }
 
-// ============================================================
-// ✅ BANGLADESH DIVISION / DISTRICT / UPAZILA DATA (Updated)
-// ============================================================
 const bdData = {
   "Dhaka": {
     "Dhaka": ["Dhaka City","Dhamrai","Dohar","Keraniganj","Nawabganj","Savar"],
@@ -700,7 +648,7 @@ const bdData = {
     "Brahmanbaria": ["Akhaura","Ashuganj","Bancharampur","Bijoynagar","Brahmanbaria Sadar","Kashba","Nabinagar","Nasirnagar","Sarail"],
     "Chandpur": ["Chandpur Sadar","Faridganj","Haimchar","Hajiganj","Kachua","Matlab North","Matlab South","Shahrasti"],
     "Chittagong": ["Anwara","Banshkhali","Boalkhali","Chandanaish","Fatikchari","Hathazari","Karnaphuli","Lohagara","Mirsarai","Patiya","Rangunia","Raujan","Sandwip","Satkania","Sitakundu"],
-    "Comilla": ["Barura","Brahmanpara","Burichang","Chandina","Chowddagram","Adarsha Sadar","Comilla Sadar South","Daudkandi","Debiduar","Homna","Laksam","Meghna","Monoharganj","Muradnagar","Nangolkot","Titas","Lalmai"],
+    "Comilla": ["Barura","Brahmanpara","Burichang","Chandina","Chowddagram","Adarsha Sadar","Comilla Sadar South","Daudkandi","Debidwar","Homna","Laksam","Meghna","Monoharganj","Muradnagar","Nangolkot","Titas","Lalmai"],
     "Cox's Bazar": ["Chakoria","Cox's Bazar Sadar","Eidgaon","Kutubdia","Moheshkhali","Pekua","Ramu","Teknaf","Ukhia"],
     "Feni": ["Chagalnayya","Daganbhuiyan","Feni Sadar","Fulgazi","Parshuram","Sonagazi"],
     "Khagrachhari": ["Dighinala","Guimara","Khagrachhari Sadar","Lakshmichhari","Mahalchhari","Manikchhari","Matiranga","Panchhari","Ramgarh"],
@@ -710,9 +658,6 @@ const bdData = {
   }
 };
 
-// ============================================================
-// Division / District / Upazila Loader
-// ============================================================
 function initDivisions() {
   const divSelect = document.getElementById('division');
   for (let division in bdData) {
@@ -764,9 +709,6 @@ function checkDeliveryCharge() {
   updateBilling(document.getElementById('upazila').value);
 }
 
-// ============================================================
-// ✅ Billing auto-fill from product price
-// ============================================================
 function updateBilling(upazila) {
   const deliveryText    = document.getElementById('deliveryChargeText');
   const codTotal        = document.getElementById('codTotalText');
@@ -775,16 +717,16 @@ function updateBilling(upazila) {
   const freeNote        = document.getElementById('freeDeliveryNote');
   const paidContent     = document.getElementById('paidDeliveryContent');
 
-  if (upazila === FREE_DELIVERY_UPAZILA) {
-    deliveryText.textContent = '৳0 (ফ্রি)';
-    codTotal.textContent     = '৳' + PRODUCT_PRICE;
-    trxGroup.style.display   = 'none';
-    trxIdGroup.style.display = 'none';
-    freeNote.style.display   = 'block';
+  if (FREE_DELIVERY_UPAZILAS.includes(upazila)) {
+    deliveryText.textContent  = '৳0 (ফ্রি)';
+    codTotal.textContent      = '৳' + PRODUCT_PRICE;
+    trxGroup.style.display    = 'none';
+    trxIdGroup.style.display  = 'none';
+    freeNote.style.display    = 'block';
     paidContent.style.display = 'none';
   } else {
     deliveryText.textContent  = '৳' + DELIVERY_CHARGE_DEFAULT;
-    codTotal.textContent      = '৳' + PRODUCT_PRICE;  // COD = product price only (delivery prepaid)
+    codTotal.textContent      = '৳' + PRODUCT_PRICE;
     trxGroup.style.display    = 'block';
     trxIdGroup.style.display  = 'block';
     freeNote.style.display    = 'none';
@@ -792,9 +734,6 @@ function updateBilling(upazila) {
   }
 }
 
-// ============================================================
-// Validation helper
-// ============================================================
 function validate(id, errId, check) {
   const el  = document.getElementById(id);
   const err = document.getElementById(errId);
@@ -805,45 +744,39 @@ function validate(id, errId, check) {
   el.classList.remove('error'); err.classList.remove('show'); return true;
 }
 
-// ============================================================
-// ✅ Form submit with EmailJS + Rate Limiting
-// ============================================================
 function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
+  document.getElementById('navLinks').classList.toggle('active');
+}
 
-  async function submitForm() {
-  // Rate limit check
+async function submitForm() {
   const remaining = getRemainingMs();
   if (remaining > 0) {
     showRateLimitScreen(remaining);
     return;
   }
 
-  // Validation
   let valid = true;
-  valid = validate('name',     'nameErr',     v => v.length >= 2)     && valid;
+  valid = validate('name',     'nameErr',     v => v.length >= 2)            && valid;
   valid = validate('phone',    'phoneErr',    v => /^01[3-9]\d{8}$/.test(v)) && valid;
-  valid = validate('division', 'divisionErr', v => v !== '')           && valid;
-  valid = validate('district', 'districtErr', v => v !== '')           && valid;
-  valid = validate('upazila',  'upazilaErr',  v => v !== '')           && valid;
-  valid = validate('area',     'areaErr',     v => v.length > 2)       && valid;
+  valid = validate('division', 'divisionErr', v => v !== '')                  && valid;
+  valid = validate('district', 'districtErr', v => v !== '')                  && valid;
+  valid = validate('upazila',  'upazilaErr',  v => v !== '')                  && valid;
+  valid = validate('area',     'areaErr',     v => v.length > 2)              && valid;
 
   const upazila = document.getElementById('upazila').value;
-  if (upazila !== FREE_DELIVERY_UPAZILA && upazila !== '') {
+  if (!FREE_DELIVERY_UPAZILAS.includes(upazila) && upazila !== '') {
     valid = validate('senderPhone', 'senderPhoneErr', v => /^01[3-9]\d{8}$/.test(v)) && valid;
     valid = validate('trxId',       'trxIdErr',       v => v.length >= 4)              && valid;
   }
 
   if (!valid) return;
 
-  // Disable button while sending
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = '⏳ পাঠানো হচ্ছে...';
 
   const orderId   = 'DOST-' + Math.random().toString(36).substr(2,6).toUpperCase();
-  const isFreeDel = upazila === FREE_DELIVERY_UPAZILA;
+  const isFreeDel = FREE_DELIVERY_UPAZILAS.includes(upazila);
 
   const orderData = {
     order_id:        orderId,
