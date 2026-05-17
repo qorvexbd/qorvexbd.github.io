@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>অর্ডার ফর্ম | QORVEX BD</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+
+<style>
+  :root {
+    --navy:   #001f3f;
+    --blue:   #3b82f6;
+    --white:  #ffffff;
+    --bg:     #f5f7fa;
+    --card:   #fdfdfd;
+    --border: #eeeeee;
+    --text:   #000000;
+    --muted:  #555555;
+    --error:  #dc2626;
+    --success: #16a34a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', 'Hind Siliguri', Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .brand-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.25);
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+
+  .header h1 {
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 700;
+    color: var(--navy);
+    border-left: 6px solid var(--navy);
+    display: inline-block;
+    padding-left: 16px;
+    text-align: left;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .header p { color: var(--muted); font-size: 15px; }
+
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    transform: translateY(-3px);
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--navy);
+  }
+
+  .product-img-holder {
+    width: 95px; height: 95px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+    background: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .product-img-holder img { width: 100%; height: 100%; object-fit: cover; }
+
+  .product-info h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+
+  .price-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .price-now { font-size: 26px; font-weight: 700; color: var(--navy); }
+  .price-old { font-size: 14px; color: #aaa; text-decoration: line-through; }
+  .badge-discount {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 32px 28px;
+  }
+
+  .form-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    border-left: 6px solid var(--navy);
+    padding-left: 14px;
+  }
+
+  .form-card .form-subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    padding-left: 20px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 28px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .form-group { margin-bottom: 18px; }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 7px;
+  }
+  label .req { color: #dc2626; margin-left: 3px; }
+
+  input[type="text"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    background: #ffffff;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: var(--text);
+    font-family: 'Segoe UI', 'Hind Siliguri', Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  input:focus, select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+  }
+  input.error, select.error { border-color: var(--error); }
+
+  .error-msg { font-size: 12px; color: var(--error); margin-top: 5px; display: none; }
+  .error-msg.show { display: block; }
+
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  select { padding-right: 36px; cursor: pointer; }
+
+  .billing-box {
+    background: rgba(0,31,63,0.02);
+    border: 1px dashed var(--blue);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 20px 0;
+  }
+  .bill-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--muted);
+  }
+  .bill-row.total {
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 16px;
+  }
+
+  .payment-instruction {
+    background: #fff8f8;
+    border: 1px solid #fee2e2;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+  .pay-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--error);
+    margin-bottom: 8px;
+  }
+  .pay-steps {
+    font-size: 13px;
+    color: #444;
+    padding-left: 18px;
+    margin-bottom: 12px;
+  }
+  .pay-steps li { margin-bottom: 4px; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px 25px;
+    background: var(--navy);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 24px;
+  }
+  .submit-btn:hover { background: var(--blue); }
+  .submit-btn:disabled { background: #999; cursor: not-allowed; }
+
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .success-screen.show { display: block; }
+  .success-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: #f0fdf4;
+    border: 2px solid #bbf7d0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+  }
+  .success-screen h2 { font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .success-screen p { color: var(--muted); font-size: 14px; }
+  .order-id {
+    display: inline-block;
+    background: #f0f4f8;
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--navy);
+    margin-top: 16px;
+    font-weight: 700;
+  }
+
+  /* Rate limit block screen */
+  .rate-block-screen {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .rate-block-screen.show { display: block; }
+  .rate-block-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+  }
+  .rate-block-screen h2 { font-size: 22px; font-weight: 700; color: var(--error); margin-bottom: 10px; }
+  .rate-block-screen p { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .countdown-text { font-size: 18px; font-weight: 700; color: var(--navy); margin-top: 10px; }
+
+  @media (max-width: 768px) {
+    .product-card { flex-direction: column; text-align: center; }
+    .price-row { justify-content: center; }
+    .header h1 { font-size: 24px; }
+    .form-card { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="projects.html">প্রোডাক্টস</a>
+            <a href="research.html">রিসার্চ</a>
+        </div>
+    </nav>
+
+<div class="wrapper">
+
+  <div class="header">
+    <div class="brand-tag">QORVEX BD · Signature Series</div>
+    <h1>অর্ডার ফর্ম</h1>
+    
+  </div>
+
+  <!-- ✅ Product price stored in data attribute for auto-fill -->
+  <div class="product-card" id="productCard" data-price="999" data-old-price="1200" data-discount="16">
+    <div class="product-img-holder">
+      <img src="assets/images/products/p1.jpg" alt="DOST Desk Companion">
+    </div>
+    <div class="product-info">
+      <div class="sub">QORVEX Signature Series</div>
+      <h2>NODE PRO Smart Home Controller</h2>
+      <div class="price-row">
+        <span class="price-now">৳1100</span>
+        <span class="price-old">৳1,300</span>
+        <span class="badge-discount">1% ছাড়</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card" id="formCard">
+    <h3>অর্ডার তথ্য পূরণ করুন</h3>
+    <div class="form-subtitle">নিচের ফর্মটি সম্পূর্ণ পূরণ করুন, আমরা শীঘ্রই যোগাযোগ করব।</div>
+
+    <!-- Rate limit block message -->
+    <div class="rate-block-screen" id="rateLimitScreen">
+      <div class="rate-block-icon">⏳</div>
+      <h2>অর্ডার সীমা পৌঁছে গেছে!</h2>
+      <p>একই ডিভাইস থেকে 1 ঘন্টার মধ্যে একাধিক অর্ডার দেওয়া যাবে না।</p>
+      <p>পরবর্তী অর্ডার দিতে অপেক্ষা করুন:</p>
+      <div class="countdown-text" id="countdownText">--:--</div>
+    </div>
+
+    <div id="mainForm">
+      <div class="section-label">ব্যক্তিগত তথ্য</div>
+
+      <div class="form-group">
+        <label>পূর্ণ নাম <span class="req">*</span></label>
+        <input type="text" id="name" placeholder="আপনার নাম লিখুন">
+        <div class="error-msg" id="nameErr">নাম দেওয়া আবশ্যক।</div>
+      </div>
+
+      <div class="form-group">
+        <label>ফোন নম্বর <span class="req">*</span></label>
+        <input type="tel" id="phone" placeholder="01XXXXXXXXX">
+        <div class="error-msg" id="phoneErr">সঠিক ফোন নম্বর দিন।</div>
+      </div>
+
+      <div class="section-label">ডেলিভারি ঠিকানা</div>
+
+      <div class="form-group">
+        <label>বিভাগ <span class="req">*</span></label>
+        <div class="select-wrap">
+          <select id="division" onchange="loadDistricts()">
+            <option value="">— বিভাগ বেছে নিন —</option>
+          </select>
+        </div>
+        <div class="error-msg" id="divisionErr">বিভাগ বেছে নিন।</div>
+      </div>
+
+      <div class="form-group">
+        <label>জেলা <span class="req">*</span></label>
+        <div class="select-wrap">
+          <select id="district" onchange="loadUpazilas()" disabled>
+            <option value="">— প্রথমে বিভাগ বেছে নিন —</option>
+          </select>
+        </div>
+        <div class="error-msg" id="districtErr">জেলা বেছে নিন।</div>
+      </div>
+
+      <div class="form-group">
+        <label>উপজেলা / থানা <span class="req">*</span></label>
+        <div class="select-wrap">
+          <select id="upazila" onchange="checkDeliveryCharge()" disabled>
+            <option value="">— প্রথমে জেলা বেছে নিন —</option>
+          </select>
+        </div>
+        <div class="error-msg" id="upazilaErr">উপজেলা/থানা বেছে নিন।</div>
+      </div>
+
+      <div class="form-group">
+        <label>এলাকা / ইউনিয়ন / গ্রাম / রোড নং <span class="req">*</span></label>
+        <input type="text" id="area" placeholder="আপনার এলাকা, গ্রাম বা রোড নম্বর লিখুন">
+        <div class="error-msg" id="areaErr">আপনার এলাকা বা গ্রামটি লিখুন।</div>
+      </div>
+
+      <div class="section-label">পেমেন্ট এবং হিসাব</div>
+
+      <div class="billing-box">
+        <div class="bill-row">
+          <span>প্রোডাক্ট মূল্য (DOST Classic):</span>
+          <span id="productPriceText">৳1100</span>
+        </div>
+        <div class="bill-row">
+          <span>ডেলিভারি চার্জ:</span>
+          <span id="deliveryChargeText">৳100</span>
+        </div>
+        <div class="bill-row total">
+          <span>বাকি ক্যাশ অন ডেলিভারি (COD):</span>
+          <span id="codTotalText">৳1100</span>
+        </div>
+      </div>
+
+      <div class="payment-instruction" id="paymentInsBox">
+        <div id="freeDeliveryNote" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:14px; color:#15803d; font-weight:600;">
+          🎉 ${upazila} এর জন্য ডেলিভারি চার্জ সম্পূর্ণ ফ্রি! সরাসরি অর্ডার কনফার্ম করুন।
+        </div>
+        <div id="paidDeliveryContent">
+          <div class="pay-title">⚠️ অর্ডার কনফার্ম করতে হলে ডেলিভারি চার্জ অগ্রিম প্রদান করতে হবে।</div>
+          <ul class="pay-steps">
+            <li>আমাদের বিকাশ/নগদ নম্বরে (<span style="font-weight:700; color:var(--navy);">01743970799</span>) উপরোক্ত চার্জটি <b>Send Money</b> করুন।</li>
+          </ul>
+
+          <div class="form-group" id="trxGroup">
+            <label>যে নম্বর থেকে টাকা পাঠিয়েছেন <span class="req">*</span></label>
+            <input type="tel" id="senderPhone" placeholder="01XXXXXXXXX">
+            <div class="error-msg" id="senderPhoneErr">টাকা পাঠানোর নম্বরটি দিন।</div>
+          </div>
+
+          <div class="form-group" id="trxIdGroup">
+            <label>বিকাশ/নগদ TrxID <span class="req">*</span></label>
+            <input type="text" id="trxId" placeholder="8N7X9K2L...">
+            <div class="error-msg" id="trxIdErr">TrxID দেওয়া আবশ্যক।</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+        ✅ অর্ডার কনফার্ম করুন
+      </button>
+    </div>
+
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">🎉</div>
+      <h2>অর্ডারটি প্রক্রিয়াধীন রয়েছে!</h2>
+      <p>আপনার অর্ডার এবং ডেলিভারি পেমেন্ট ভেরিফাই করা হচ্ছে। আপনার অর্ডার নিশ্চিত করার জন্য শিঘ্রই আপনার সাথে আমরা যোগাযোগ করবো।</p>
+      <div class="order-id" id="orderId">ORDER #DOST-XXXX</div>
+    </div>
+  </div>
+</div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+880 1743970799</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+<script>
+// ============================================================
+// ✅ GOOGLE APPS SCRIPT CONFIG
+// ============================================================
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzy9wV8brndYks_BToJUPxMZENOH33X8GH_5wXaxHTH0B9XEdWQxHjHf_udIuMhsQi2Q/exec"; // Deploy করার পর এখানে URL বসান
+
+// ============================================================
+// ✅ PRODUCT CONFIG — product card এর data-price থেকে auto-fill
+// ============================================================
+const DELIVERY_CHARGE_DEFAULT = 100;
+const FREE_DELIVERY_UPAZILAS   = "Rangpur Sadar", "Gangachara";
+
+const productCard  = document.getElementById('productCard');
+const PRODUCT_PRICE = parseInt(productCard.getAttribute('data-price')) || 999;
+
+// পেমেন্ট সেকশনে প্রোডাক্ট মূল্য অটো সেট
+document.getElementById('productPriceText').textContent = '৳' + PRODUCT_PRICE;
+document.getElementById('codTotalText').textContent     = '৳' + PRODUCT_PRICE;
+
+// ============================================================
+// ✅ RATE LIMITING — 1 ঘন্টায় একটির বেশি অর্ডার নয়
+// ============================================================
+const RATE_LIMIT_MS = 60 * 60 * 1000; // 1 hour
+const RATE_KEY      = 'qorvex_last_order_ts';
+
+function getLastOrderTime() {
+  try { return parseInt(localStorage.getItem(RATE_KEY)) || 0; } catch(e) { return 0; }
+}
+function setLastOrderTime() {
+  try { localStorage.setItem(RATE_KEY, Date.now().toString()); } catch(e) {}
+}
+function getRemainingMs() {
+  const last = getLastOrderTime();
+  if (!last) return 0;
+  const elapsed = Date.now() - last;
+  return elapsed < RATE_LIMIT_MS ? RATE_LIMIT_MS - elapsed : 0;
+}
+
+// যদি ইতিমধ্যে rate limit এ থাকে তাহলে পেজ লোডেই block করুন
+window.addEventListener('DOMContentLoaded', function() {
+  const remaining = getRemainingMs();
+  if (remaining > 0) {
+    showRateLimitScreen(remaining);
+  }
+  initDivisions();
+  updateBilling('');
+});
+
+function showRateLimitScreen(remainingMs) {
+  document.getElementById('mainForm').style.display = 'none';
+  document.getElementById('rateLimitScreen').classList.add('show');
+  startCountdown(remainingMs);
+}
+
+function startCountdown(remainingMs) {
+  function tick() {
+    const rem = getRemainingMs();
+    if (rem <= 0) {
+      document.getElementById('countdownText').textContent = 'এখন অর্ডার দিতে পারবেন!';
+      setTimeout(() => location.reload(), 1500);
+      return;
+    }
+    const mins = Math.floor(rem / 60000);
+    const secs = Math.floor((rem % 60000) / 1000);
+    document.getElementById('countdownText').textContent =
+      String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+    setTimeout(tick, 1000);
+  }
+  tick();
+}
+
+// ============================================================
+// ✅ BANGLADESH DIVISION / DISTRICT / UPAZILA DATA (Updated)
+// ============================================================
+const bdData = {
+  "Dhaka": {
+    "Dhaka": ["Dhaka City","Dhamrai","Dohar","Keraniganj","Nawabganj","Savar"],
+    "Faridpur": ["Alfadanga","Bhanga","Boalmari","Char Bhadrasan","Faridpur Sadar","Madhukhali","Nagarkanda","Sadarpur","Saltha"],
+    "Gazipur": ["Gazipur Sadar","Kaliakoir","Kaliganj","Kapasia","Sreepur"],
+    "Gopalganj": ["Gopalganj Sadar","Kasiani","Kotalipara","Maksudpur","Tungipara"],
+    "Kishoreganj": ["Austogram","Bajitpur","Bhairab","Hosainpur","Itna","Karimganj","Katiadi","Kishoreganj Sadar","Kuliarchar","Mithamain","Nikli","Pakundia","Tarail"],
+    "Madaripur": ["Kalkini","Madaripur Sadar","Rajoir","Shibchar","Dasar"],
+    "Manikganj": ["Daulatpur","Ghior","Harirampur","Manikganj Sadar","Saturia","Shibalaya","Singair"],
+    "Munshiganj": ["Gazaria","Lauhajang","Munshiganj Sadar","Serajdikhan","Sreenagar","Tangibari"],
+    "Narayanganj": ["Araihazar","Bandar","Narayanganj Sadar","Rupganj","Sonargaon"],
+    "Narsingdi": ["Belabo","Monohardi","Narsingdi Sadar","Palash","Raipura","Shibpur"],
+    "Rajbari": ["Baliakandi","Goalunda","Kalukhali","Pangsha","Rajbari Sadar"],
+    "Shariatpur": ["Bhedarganj","Damudiya","Gosairhat","Jajira","Naria","Shariatpur Sadar"],
+    "Tangail": ["Bashail","Bhuapur","Delduar","Dhanbari","Ghatail","Gopalpur","Kalihati","Madhupur","Mirzapur","Nagarpur","Shakhipur","Tangail Sadar"]
+  },
+  "Mymensingh": {
+    "Jamalpur": ["Bakshiganj","Dewanganj","Islampur","Jamalpur Sadar","Madarganj","Melandah","Sharishabari"],
+    "Mymensingh": ["Bhaluka","Dhubaura","Fulbaria","Fulpur","Gaffargaon","Gouripur","Haluaghat","Iswarganj","Mymensingh Sadar","Muktagacha","Nandail","Trishal"],
+    "Netrokona": ["Atpara","Barhatta","Durgapur","Kalmakanda","Kendua","Khaliajuri","Madan","Mohanganj","Netrokona Sadar","Purbadhala"],
+    "Sherpur": ["Jhenaigati","Nakla","Nalitabari","Sherpur Sadar","Sribordi"]
+  },
+  "Rajshahi": {
+    "Bogra": ["Adamdighi","Bogra Sadar","Dhunot","Dhubchanchia","Gabtali","Kahaloo","Nandigram","Sariakandi","Shajahanpur","Sherpur","Shibganj","Sonatola"],
+    "Chapai Nawabganj": ["Bholahat","Gomastapur","Nachole","Nawabganj Sadar","Shibganj"],
+    "Joypurhat": ["Akkelpur","Joypurhat Sadar","Kalai","Khetlal","Panchbibi"],
+    "Naogaon": ["Atrai","Badalgachi","Dhamoirhat","Manda","Mahadebpur","Naogaon Sadar","Neyamatpur","Patnitala","Porsha","Raninagar","Sapahar"],
+    "Natore": ["Baghatipara","Baraigram","Gurudaspur","Lalpur","Natore Sadar","Noldanga","Singra"],
+    "Pabna": ["Atgharia","Bera","Bhangura","Chatmohar","Faridpur","Iswardi","Pabna Sadar","Santhia","Sujanagar"],
+    "Rajshahi": ["Bagha","Bagmara","Charghat","Durgapur","Godagari","Mohanpur","Paba","Putia","Tanore"],
+    "Sirajganj": ["Belkuchi","Chowhali","Kamarkhanda","Kazipur","Raiganj","Shahajadpur","Sirajganj Sadar","Tarash","Ullapara"]
+  },
+  "Rangpur": {
+    "Dinajpur": ["Birampur","Birganj","Birol","Bochaganj","Chirirbandar","Dinajpur Sadar","Fulbari","Ghorahat","Hakimpur","Kaharole","Khanshama","Nawabganj","Parbatipur"],
+    "Gaibandha": ["Fulchari","Gaibandha Sadar","Gobindaganj","Palashbari","Sadullapur","Shaghatta","Sundarganj"],
+    "Kurigram": ["Bhurungamari","Chilmary","Fulbari","Kurigram Sadar","Nageswari","Rajarhat","Rajibpur","Rowmari","Ulipur"],
+    "Lalmonirhat": ["Aditmari","Hatibandha","Kaliganj","Lalmonirhat Sadar","Patgram"],
+    "Nilphamari": ["Dimla","Domar","Jaldhaka","Kishoreganj","Nilphamari Sadar","Saidpur"],
+    "Panchagarh": ["Atwari","Boda","Debiganj","Panchagarh Sadar","Tetulia"],
+    "Rangpur": ["Badarganj","Gangachara","Kaunia","Mithapukur","Pirgacha","Pirganj","Rangpur Sadar","Taraganj"],
+    "Thakurgaon": ["Baliadangi","Haripur","Pirganj","Ranishankail","Thakurgaon Sadar"]
+  },
+  "Khulna": {
+    "Bagerhat": ["Bagerhat Sadar","Chitalmari","Fakirhat","Kachua","Mollarhat","Mongla","Morelganj","Rampal","Sarankhola"],
+    "Chuadanga": ["Alamdanga","Chuadanga Sadar","Damurhuda","Jibannagar"],
+    "Jessore": ["Abhoynagar","Bagherpara","Chowgacha","Jessore Sadar","Jhikargacha","Keshabpur","Manirampur","Sharsha"],
+    "Jhenaidah": ["Harinakunda","Jhenaidah Sadar","Kaliganj","Kotchandpur","Maheshpur","Shailkupa"],
+    "Khulna": ["Batiaghata","Dacope","Dighalia","Dumuria","Fulltala","Koira","Paikgacha","Rupsa","Terokhada"],
+    "Kushtia": ["Bheramara","Daulatpur","Khoksha","Kumarkhali","Kushtia Sadar","Mirpur"],
+    "Magura": ["Magura Sadar","Mohammadpur","Shalikha","Sreepur"],
+    "Meherpur": ["Gangni","Meherpur Sadar","Mujibnagar"],
+    "Narail": ["Kalia","Lohagara","Narail Sadar"],
+    "Satkhira": ["Assasuni","Debhata","Kaliganj","Kolaroa","Satkhira Sadar","Shyamnagar","Tala"]
+  },
+  "Sylhet": {
+    "Habiganj": ["Ajmiriganj","Bahubal","Baniachang","Chunarughat","Habiganj Sadar","Lakhai","Madhabpur","Nabiganj","Sayestaganj"],
+    "Moulvibazar": ["Barlekha","Juri","Kamalganj","Kulaura","Moulvibazar Sadar","Rajnagar","Sreemangal"],
+    "Sunamganj": ["Biswambharpur","Chhatak","Derai","Dharmapasha","Dowarabazar","Jagannathpur","Jamalganj","Shantiganj","Maddhanagar","Sulla","Sunamganj Sadar","Taherpur"],
+    "Sylhet": ["Balaganj","Beanibazar","Biswanath","Companiganj","Dakshinsurma","Fenchuganj","Golapganj","Gowainghat","Jaintapur","Kanaighat","Osmani Nagar","South Surma","Sylhet Sadar","Zakiganj"]
+  },
+  "Barisal": {
+    "Barguna": ["Amtali","Bamna","Barguna Sadar","Betagi","Patharghata","Taltali"],
+    "Barisal": ["Agailjhara","Babuganj","Bakerganj","Banaripara","Barisal Sadar","Gournadi","Hijla","Mehendiganj","Muladi","Wazirpur"],
+    "Bhola": ["Bhola Sadar","Borhanuddin","Charfession","Daulatkhan","Lalmohan","Manpura","Tajumuddin"],
+    "Jhalokathi": ["Jhalokathi Sadar","Kathalia","Nalchiti","Rajapur"],
+    "Patuakhali": ["Bauphal","Dasmina","Dumki","Galachipa","Kalapara","Mirjaganj","Patuakhali Sadar","Rangabali"],
+    "Pirojpur": ["Bhandaria","Kawkhali","Mathbaria","Nazirpur","Nesarabad","Pirojpur Sadar","Zianagar"]
+  },
+  "Chittagong": {
+    "Bandarban": ["Ali Kadam","Bandarban Sadar","Lama","Naikhongchhari","Rowangchhari","Ruma","Thanchi"],
+    "Brahmanbaria": ["Akhaura","Ashuganj","Bancharampur","Bijoynagar","Brahmanbaria Sadar","Kashba","Nabinagar","Nasirnagar","Sarail"],
+    "Chandpur": ["Chandpur Sadar","Faridganj","Haimchar","Hajiganj","Kachua","Matlab North","Matlab South","Shahrasti"],
+    "Chittagong": ["Anwara","Banshkhali","Boalkhali","Chandanaish","Fatikchari","Hathazari","Karnaphuli","Lohagara","Mirsarai","Patiya","Rangunia","Raujan","Sandwip","Satkania","Sitakundu"],
+    "Comilla": ["Barura","Brahmanpara","Burichang","Chandina","Chowddagram","Adarsha Sadar","Comilla Sadar South","Daudkandi","Debiduar","Homna","Laksam","Meghna","Monoharganj","Muradnagar","Nangolkot","Titas","Lalmai"],
+    "Cox's Bazar": ["Chakoria","Cox's Bazar Sadar","Eidgaon","Kutubdia","Moheshkhali","Pekua","Ramu","Teknaf","Ukhia"],
+    "Feni": ["Chagalnayya","Daganbhuiyan","Feni Sadar","Fulgazi","Parshuram","Sonagazi"],
+    "Khagrachhari": ["Dighinala","Guimara","Khagrachhari Sadar","Lakshmichhari","Mahalchhari","Manikchhari","Matiranga","Panchhari","Ramgarh"],
+    "Laksmipur": ["Kamalnagar","Laksmipur Sadar","Ramgati","Ramganj","Raipur"],
+    "Noakhali": ["Begumganj","Chatkhil","Companiganj","Hatiya","Kabir Hat","Noakhali Sadar","Senbag","Sonaimuri","Subarnachar"],
+    "Rangamati": ["Baghaichari","Barkal","Belaichari","Jurachari","Kaptai","Kawkhali","Langadu","Naniarchar","Rajasthali","Rangamati Sadar"]
+  }
+};
+
+// ============================================================
+// Division / District / Upazila Loader
+// ============================================================
+function initDivisions() {
+  const divSelect = document.getElementById('division');
+  for (let division in bdData) {
+    let opt = document.createElement('option');
+    opt.value = division;
+    opt.textContent = division;
+    divSelect.appendChild(opt);
+  }
+}
+
+function loadDistricts() {
+  const division  = document.getElementById('division').value;
+  const distSelect = document.getElementById('district');
+  const upaSelect  = document.getElementById('upazila');
+
+  distSelect.innerHTML = '<option value="">— জেলা বেছে নিন —</option>';
+  upaSelect.innerHTML  = '<option value="">— প্রথমে জেলা বেছে নিন —</option>';
+  upaSelect.disabled   = true;
+
+  if (!division) { distSelect.disabled = true; updateBilling(''); return; }
+
+  distSelect.disabled = false;
+  for (let district in bdData[division]) {
+    let opt = document.createElement('option');
+    opt.value = district; opt.textContent = district;
+    distSelect.appendChild(opt);
+  }
+  updateBilling('');
+}
+
+function loadUpazilas() {
+  const division  = document.getElementById('division').value;
+  const district  = document.getElementById('district').value;
+  const upaSelect = document.getElementById('upazila');
+
+  upaSelect.innerHTML = '<option value="">— উপজেলা বেছে নিন —</option>';
+  if (!district) { upaSelect.disabled = true; updateBilling(''); return; }
+
+  upaSelect.disabled = false;
+  (bdData[division][district] || []).forEach(upa => {
+    let opt = document.createElement('option');
+    opt.value = upa; opt.textContent = upa;
+    upaSelect.appendChild(opt);
+  });
+  updateBilling('');
+}
+
+function checkDeliveryCharge() {
+  updateBilling(document.getElementById('upazila').value);
+}
+
+// ============================================================
+// ✅ Billing auto-fill from product price
+// ============================================================
+function updateBilling(upazila) {
+  const deliveryText    = document.getElementById('deliveryChargeText');
+  const codTotal        = document.getElementById('codTotalText');
+  const trxGroup        = document.getElementById('trxGroup');
+  const trxIdGroup      = document.getElementById('trxIdGroup');
+  const freeNote        = document.getElementById('freeDeliveryNote');
+  const paidContent     = document.getElementById('paidDeliveryContent');
+
+  if (FREE_DELIVERY_UPAZILAS.includes(upazila)) {
+    deliveryText.textContent = '৳0 (ফ্রি)';
+    codTotal.textContent     = '৳' + PRODUCT_PRICE;
+    trxGroup.style.display   = 'none';
+    trxIdGroup.style.display = 'none';
+    freeNote.style.display   = 'block';
+    paidContent.style.display = 'none';
+  } else {
+    deliveryText.textContent  = '৳' + DELIVERY_CHARGE_DEFAULT;
+    codTotal.textContent      = '৳' + PRODUCT_PRICE;  // COD = product price only (delivery prepaid)
+    trxGroup.style.display    = 'block';
+    trxIdGroup.style.display  = 'block';
+    freeNote.style.display    = 'none';
+    paidContent.style.display = 'block';
+  }
+}
+
+// ============================================================
+// Validation helper
+// ============================================================
+function validate(id, errId, check) {
+  const el  = document.getElementById(id);
+  const err = document.getElementById(errId);
+  if (!el || el.offsetParent === null) return true;
+  if (!check(el.value.trim())) {
+    el.classList.add('error'); err.classList.add('show'); return false;
+  }
+  el.classList.remove('error'); err.classList.remove('show'); return true;
+}
+
+// ============================================================
+// ✅ Form submit with EmailJS + Rate Limiting
+// ============================================================
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  async function submitForm() {
+  // Rate limit check
+  const remaining = getRemainingMs();
+  if (remaining > 0) {
+    showRateLimitScreen(remaining);
+    return;
+  }
+
+  // Validation
+  let valid = true;
+  valid = validate('name',     'nameErr',     v => v.length >= 2)     && valid;
+  valid = validate('phone',    'phoneErr',    v => /^01[3-9]\d{8}$/.test(v)) && valid;
+  valid = validate('division', 'divisionErr', v => v !== '')           && valid;
+  valid = validate('district', 'districtErr', v => v !== '')           && valid;
+  valid = validate('upazila',  'upazilaErr',  v => v !== '')           && valid;
+  valid = validate('area',     'areaErr',     v => v.length > 2)       && valid;
+
+  const upazila = document.getElementById('upazila').value;
+  if (upazila !== FREE_DELIVERY_UPAZILA && upazila !== '') {
+    valid = validate('senderPhone', 'senderPhoneErr', v => /^01[3-9]\d{8}$/.test(v)) && valid;
+    valid = validate('trxId',       'trxIdErr',       v => v.length >= 4)              && valid;
+  }
+
+  if (!valid) return;
+
+  // Disable button while sending
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ পাঠানো হচ্ছে...';
+
+  const orderId   = 'DOST-' + Math.random().toString(36).substr(2,6).toUpperCase();
+  const isFreeDel = upazila === FREE_DELIVERY_UPAZILA;
+
+  const orderData = {
+    order_id:        orderId,
+    order_time:      new Date().toLocaleString('bn-BD'),
+    customer_name:   document.getElementById('name').value.trim(),
+    customer_phone:  document.getElementById('phone').value.trim(),
+    division:        document.getElementById('division').value,
+    district:        document.getElementById('district').value,
+    upazila:         upazila,
+    area:            document.getElementById('area').value.trim(),
+    product_name:    'DOST Desk Companion',
+    product_price:   PRODUCT_PRICE,
+    delivery_charge: isFreeDel ? 0 : DELIVERY_CHARGE_DEFAULT,
+    cod_total:       PRODUCT_PRICE,
+    sender_phone:    isFreeDel ? 'N/A' : (document.getElementById('senderPhone').value.trim()),
+    trx_id:          isFreeDel ? 'N/A' : (document.getElementById('trxId').value.trim())
+  };
+
+  try {
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(orderData)
+    });
+    const result = await response.json();
+    if (result.status === 'success') {
+      setLastOrderTime();
+      document.getElementById('orderId').textContent = 'ORDER #' + orderId;
+      document.getElementById('mainForm').style.display = 'none';
+      document.getElementById('successScreen').classList.add('show');
+    } else {
+      throw new Error(result.message || 'Unknown error');
+    }
+  } catch (error) {
+    console.error('Submit Error:', error);
+    btn.disabled    = false;
+    btn.textContent = '✅ অর্ডার কনফার্ম করুন';
+    alert('⚠️ অর্ডার পাঠাতে সমস্যা হয়েছে। ইন্টারনেট সংযোগ চেক করে আবার চেষ্টা করুন।');
+  }
+}
+</script>
+</body>
+</html>
