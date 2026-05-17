@@ -775,7 +775,7 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = '⏳ পাঠানো হচ্ছে...';
 
-  const orderId   = 'DOST-' + Math.random().toString(36).substr(2,6).toUpperCase();
+  const orderId   = 'NP-' + Math.random().toString(36).substr(2,6).toUpperCase();
   const isFreeDel = FREE_DELIVERY_UPAZILAS.includes(upazila);
 
   const orderData = {
@@ -787,7 +787,7 @@ async function submitForm() {
     district:        document.getElementById('district').value,
     upazila:         upazila,
     area:            document.getElementById('area').value.trim(),
-    product_name:    'DOST Desk Companion',
+    product_name:    'NODE PRO Smart Home Controller',
     product_price:   PRODUCT_PRICE,
     delivery_charge: isFreeDel ? 0 : DELIVERY_CHARGE_DEFAULT,
     cod_total:       PRODUCT_PRICE,
