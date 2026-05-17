@@ -309,7 +309,7 @@
             <a href="about.html">আমাদের সম্পর্কে</a>
             <a href="services.html">সেবাসমূহ</a>
             <a href="projects.html">প্রজেক্ট</a>
-            <a href="projects.html">প্রোডাক্টস</a>
+            <a href="products.html">প্রোডাক্টস</a>
             <a href="research.html">রিসার্চ</a>
         </div>
     </nav>
@@ -775,7 +775,7 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = '⏳ পাঠানো হচ্ছে...';
 
-  const orderId   = 'NP-' + Math.random().toString(36).substr(2,6).toUpperCase();
+  const orderId   = 'DOST-' + Math.random().toString(36).substr(2,6).toUpperCase();
   const isFreeDel = FREE_DELIVERY_UPAZILAS.includes(upazila);
 
   const orderData = {
