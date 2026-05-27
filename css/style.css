@@ -19,7 +19,7 @@ body {
     padding: 40px 20px;
 }
 
-/* --- হেডার (পিউর ব্ল্যাক ব্লারি ও বড় লোগো) --- */
+/* --- হেডার (পিউর ব্ল্যাক ব্লারি ও বড় লোগো) --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -104,7 +104,7 @@ p, span, li, small {
     transform: translateY(-5px);
 }
 
-/* --- নতুন প্রফেশনাল মেম্বার কার্ড ডিজাইন (গ্রেডিয়েন্ট ফিনিশ) --- */
+/* --- নতুন প্রফেশনাল মেম্বার কার্ড ডিজাইন (গ্রেডিয়েন্ট ফিনিশ) --- */
 .team-section {
     position: relative;
     padding-bottom: 80px;
@@ -166,7 +166,7 @@ p, span, li, small {
     object-fit: cover;
 }
 
-/* ছবির ওপর গ্রেডিয়েন্ট ফিনিশ */
+/* ছবির ওপর গ্রেডিয়েন্ট ফিনিশ */
 .member-img-container::after {
     content: '';
     position: absolute;
@@ -314,4 +314,52 @@ footer {
     .social-icons { justify-content: center; }
     .footer-links-col h4::after { left: 50%; transform: translateX(-50%); }
     .slider-track { flex-direction: column; align-items: center; }
+}
+
+
+/* ============================================
+   ঈদুল আযহা ডেকোরেশন
+   ============================================ */
+
+.eid-decor-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.eid-icon {
+    position: absolute;
+    bottom: -100px;
+    opacity: 0;
+    animation: eidFloatUp linear infinite;
+    pointer-events: none;
+}
+
+@keyframes eidFloatUp {
+    0%   { transform: translateY(0) rotate(0deg);   opacity: 0;    }
+    8%   { opacity: 0.10; }
+    88%  { opacity: 0.10; }
+    100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+
+.eid-icon:nth-child(1)  { left: 5%;  animation-duration: 14s; animation-delay: 0s;   width: 55px; }
+.eid-icon:nth-child(2)  { left: 15%; animation-duration: 11s; animation-delay: 3s;   width: 40px; }
+.eid-icon:nth-child(3)  { left: 25%; animation-duration: 16s; animation-delay: 6s;   width: 60px; }
+.eid-icon:nth-child(4)  { left: 35%; animation-duration: 12s; animation-delay: 1s;   width: 45px; }
+.eid-icon:nth-child(5)  { left: 48%; animation-duration: 15s; animation-delay: 4s;   width: 38px; }
+.eid-icon:nth-child(6)  { left: 58%; animation-duration: 10s; animation-delay: 7s;   width: 55px; }
+.eid-icon:nth-child(7)  { left: 68%; animation-duration: 13s; animation-delay: 2s;   width: 42px; }
+.eid-icon:nth-child(8)  { left: 78%; animation-duration: 17s; animation-delay: 5s;   width: 50px; }
+.eid-icon:nth-child(9)  { left: 88%; animation-duration: 11s; animation-delay: 8s;   width: 58px; }
+.eid-icon:nth-child(10) { left: 10%; animation-duration: 18s; animation-delay: 10s;  width: 44px; }
+.eid-icon:nth-child(11) { left: 42%; animation-duration: 13s; animation-delay: 12s;  width: 36px; }
+.eid-icon:nth-child(12) { left: 72%; animation-duration: 15s; animation-delay: 9s;   width: 52px; }
+
+@media (max-width: 768px) {
+    .eid-icon:nth-child(n+7) { display: none; }
 }
