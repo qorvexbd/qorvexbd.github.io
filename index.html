@@ -1,34 +1,35 @@
-
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QORVEX BD | হোম</title>
-    
+        
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+        
     <style>
-        /* স্লাইডার স্টাইল */
+        /* স্লাইডার স্টাইল - ১৬:৯ রেশিও ফিক্সড */
         .swiper {
             width: 100%;
-            height: 450px;
+            height: auto; /* ফিক্সড হাইট বাদ দিয়ে অটো করা হয়েছে */
+            aspect-ratio: 16 / 9; /* পিসি ও মোবাইল সবখানে ১৬:৯ রাখবে */
             margin: 20px 0;
         }
         .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* ইমেজ যেন ফেটে বা চ্যাপ্টা না হয়ে সুন্দরভাবে ফিট হয় */
             border-radius: 15px;
         }
-        /* বিস্তারিত সেকশন ইমেজ */
+        /* বিস্তারিত সেকশন ইমেজ - ১৬:৯ রেশিও ফিক্সড */
         .featured-product-img {
             width: 100%;
-            max-height: 500px;
+            max-width: 800px; /* পিসিতে যেন অতিরিক্ত বড় না হয়ে যায় */
+            height: auto;
+            aspect-ratio: 16 / 9; /* পিসি ও মোবাইল সবখানে ১৬:৯ রাখবে */
             object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -36,7 +37,6 @@
     </style>
 </head>
 <body>
-
     <nav>
         <div class="logo-container">
             <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
@@ -47,15 +47,16 @@
             <a href="about.html">আমাদের সম্পর্কে</a>
             <a href="services.html">সেবাসমূহ</a>
             <a href="projects.html">প্রজেক্ট</a>
-            <a href="products.html">প্রোডাক্টস</a> <a href="research.html">রিসার্চ</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html">রিসার্চ</a>
         </div>
     </nav>
-
+    
     <header class="container mx-auto flex flex-col items-center text-center py-16 px-6">
         <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight" style="color: #001f3f;">উদ্ভাবনী <span class="text-blue-600">প্রযুক্তি</span> ও <span class="text-blue-600">গবেষণা</span></h1>
-        <p class="text-xl max-w-3xl mb-12 text-gray-600">আমরা রোবোটিক্স, আইওটি এবং ইলেকট্রনিক্স নিয়ে আধুনিক সমাধান প্রদান করি। আমাদের লক্ষ্য হচ্ছে প্রযুক্তির মাধ্যমে জীবনকে সহজ ও স্মার্ট করে তোলা।</p>
+        <p class="text-xl max-w-3xl mb-12 text-gray-600">আমরা রোবোটিক্স, আইওটি এবং ইলেকট্রনিক্স নিয়ে আধুনিক সমাধান প্রদান করি। আমাদের লক্ষ্য হচ্ছে প্রযুক্তির মাধ্যমে জীবনকে সহজ ও স্মার্ট করে তোলা।</p>
     </header>
-
+    
     <section class="container mx-auto px-6 mb-16">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -73,12 +74,11 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-
+    
     <section class="container mx-auto px-6 mb-24">
         <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #001f3f;">আমাদের <span class="text-blue-600">LATEST</span> কালেকশন</h2>
-             </div>
-
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #001f3f;">আমাদের <span class="text-blue-600">LATEST</span> কালেকশন</h2> 
+        </div>
         <div class="flex flex-col items-center gap-8">
             <img src="assets/images/products/p1.jpg" alt="Featured Product" class="featured-product-img">
             <a href="product1.html" class="px-12 py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg text-lg">
@@ -86,26 +86,25 @@
             </a>
         </div>
     </section>
+   
+    <section class="container mx-auto px-6 mb-24">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #001f3f;"><span class="text-blue-600">প্রজেক্ট ডেমোনেস্ট্রেশন</span></h2>
+        </div>
+        <div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl aspect-video">
+            <div class="absolute inset-0 z-10" style="pointer-events: none;"></div>
+            <iframe 
+                id="ytPlayer"
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/c3Fks0QGfx8?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=c3Fks0QGfx8&controls=1&modestbranding=1&rel=0" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
 
-   <section class="container mx-auto px-6 mb-24">
-    <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #001f3f;"><span class="text-blue-600">প্রজেক্ট ডেমোনেস্ট্রেশন</span></h2>
-    </div>
-
-    <div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl aspect-video">
-        <div class="absolute inset-0 z-10" style="pointer-events: none;"></div>
-        
-        <iframe 
-            id="ytPlayer"
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/c3Fks0QGfx8?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=c3Fks0QGfx8&controls=1&modestbranding=1&rel=0" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-</section>
     <section class="container mx-auto px-6 mb-24">
         <h2 class="text-3xl font-bold text-center mb-12" style="color: #001f3f;">কেন <span class="text-blue-600">আমাদের</span> বেছে নেবেন?</h2>
         <div class="grid md:grid-cols-3 gap-10">
@@ -113,7 +112,7 @@
                 <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                     <i class="fas fa-microchip text-2xl text-blue-600"></i>
                 </div>
-                <h3 class="text-2xl font-bold mb-4"><span class="text-blue-600">উন্নতমানের হার্ডওয়্যার</span></h3>
+                <h3 class="text-2xl font-bold mb-4"><span class="text-blue-600">উন্নতমানের হার্ডওয়্যার</span></h3>
                 <p class="text-gray-600">আমরা উন্নতমানের সেন্সর এবং কন্ট্রোলার ব্যবহার করে নির্ভুল প্রজেক্ট তৈরি করি।</p>
             </div>
             <div class="p-8 bg-slate-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
@@ -121,7 +120,7 @@
                     <i class="fas fa-brain text-2xl text-blue-600"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4"><span class="text-blue-600">AI ইন্টিগ্রেশন</span></h3>
-                <p class="text-gray-600">আমাদের ডিভাইসে রয়েছে আর্টিফিশিয়াল ইন্টেলিজেন্স সাপোর্ট এর সুযোগ যা কাজের গতি বাড়াবে।</p>
+                <p class="text-gray-600">আমাদের ডিভাইসে রয়েছে আর্টিফিশিয়াল ইন্টেলিজেন্স সাপোর্ট এর সুযোগ যা কাজের গতি বাড়াবে।</p>
             </div>
             <div class="p-8 bg-slate-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
                 <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
@@ -138,7 +137,7 @@
             <div class="footer-logo-section">
                 <img src="assets/images/logo.png" alt="Footer Logo">
                 <p class="footer-description">
-                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                    QORVEX BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সリューション নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
                 </p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -147,27 +146,24 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-
             <div class="footer-links-col">
                 <h4>কোম্পানি</h4>
                 <ul>
                     <li><a href="about.html">আমাদের সম্পর্কে</a></li>
                     <li><a href="team.html">টিম মেম্বার</a></li>
-                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
                     <li><a href="contact.html">যোগাযোগ</a></li>
                 </ul>
             </div>
-
             <div class="footer-links-col">
                 <h4>রিসোর্স</h4>
                 <ul>
                     <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
                     <li><a href="research.html">গবেষণাপত্র</a></li>
                     <li><a href="#">ডকুমেন্টেশন</a></li>
-                    <li><a href="#">টিউটোরিয়াল</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
                 </ul>
             </div>
-
             <div class="footer-links-col">
                 <h4>সরাসরি যোগাযোগ</h4>
                 <div class="space-y-4 mt-4">
@@ -179,7 +175,7 @@
                         <i class="fas fa-envelope text-blue-500"></i>
                         <p class="text-sm text-gray-400">qorvexbd@gmail.com</p>
                     </div>
-            <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3">
                         <i class="fas fa-phone-alt text-blue-500"></i>
                         <p class="text-sm text-gray-400">+880 1743970799</p>
                     </div>
@@ -193,12 +189,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // মেনু টগল ফাংশন
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // স্লাইডার ইনিশিয়ালাইজেশন
         var swiper = new Swiper(".mySwiper", {
             loop: true,
             autoplay: {
