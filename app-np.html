@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NODE PRO Control App | QORVEX Technology BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* প্লে-স্টোর স্টাইল কাস্টমাইজেশন */
+        .screenshot-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+        .screenshot-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .screenshot-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .screenshot-card {
+            min-width: 200px;
+            max-width: 220px;
+            aspect-ratio: 9/19;
+            background: #f1f5f9;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .app-icon-large {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 22%;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+        }
+        /* ড্রপডাউন মেনু কাস্টমাইজেশন */
+        .download-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 50;
+            overflow: hidden;
+        }
+        .download-dropdown.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html">রিসার্চ</a>
+            <a href="app.html" style="color: #3b82f6;">অ্যাপ্লিকেশন্স</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+        
+        <section class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
+            <img src="assets/images/apps/app-np.jpg" alt="App Icon" class="w-32 h-32 md:w-48 md:h-48 app-icon-large object-contain border border-gray-100" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3710/3710263.png'">
+            
+            <div class="flex-grow text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 text-slate-900">NODE PRO Control</h1>
+                <p class="text-blue-600 font-bold text-lg mb-8">QORVEX Technology BD</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <!-- ড্রপডাউন সহ ডাউনলোড বাটন ক্যাটাগরি -->
+                    <div class="relative inline-block text-left w-full sm:w-auto">
+                        <button onclick="toggleDropdown()" class="download-btn w-full sm:w-auto px-8 py-3 text-white rounded-full font-bold flex items-center justify-center gap-3">
+                            <i class="fas fa-download"></i> অ্যাপ ডাউনলোড করুন <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div id="downloadDropdown" class="download-dropdown mt-2">
+                            <a href="assets/downloads/dost-companion.apk" download class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-slate-50 transition-colors border-b border-gray-100">
+                                <i class="fab fa-android text-green-600 text-lg"></i> 
+                                <div class="text-left"><span class="block font-bold text-sm">Android (APK)</span><span class="text-xs text-gray-400">সংস্করণ v1.0.4</span></div>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-slate-50 transition-colors border-b border-gray-100">
+                                <i class="fab fa-apple text-slate-800 text-lg"></i> 
+                                <div class="text-left"><span class="block font-bold text-sm">iOS (App Store)</span><span class="text-xs text-gray-400">শীঘ্রই আসছে</span></div>
+                            </a>
+                            <a href="assets/downloads/dost-companion-win.zip" download class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-slate-50 transition-colors border-b border-gray-100">
+                                <i class="fab fa-windows text-blue-500 text-lg"></i> 
+                                <div class="text-left"><span class="block font-bold text-sm">Windows Setup (.zip)</span><span class="text-xs text-gray-400">ডেক্সটপ সংস্করণ</span></div>
+                            </a>
+                            <a href="assets/downloads/dost-companion-linux.tar.gz" download class="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-slate-50 transition-colors">
+                                <i class="fab fa-linux text-amber-600 text-lg"></i> 
+                                <div class="text-left"><span class="block font-bold text-sm">Linux Tarball (.tar.gz)</span><span class="text-xs text-gray-400">রিলিজড</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="px-8 py-3 border-2 border-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-50 transition-all">
+                        <i class="fas fa-share-alt mr-2"></i> বন্ধুদের পাঠান
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl font-bold mb-6 text-slate-800">স্ক্রিনশট</h2>
+            <div class="screenshot-container">
+                <div class="screenshot-card">
+                    <img src="assets/images/apps/nodepro/screenshots/s1.jpg" alt="Screen 1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/220x460?text=Screen+1'">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/apps/nodepro/screenshots/s2.jpg" alt="Screen 2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/220x460?text=Screen+2'">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/apps/nodepro/screenshots/s3.jpg" alt="Screen 3" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/220x460?text=Screen+3'">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/apps/nodepro/screenshots/s4.jpg" alt="Screen 4" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/220x460?text=Screen+4'">
+                </div>
+            </div>
+        </section>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2">
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">এই অ্যাপ সম্পর্কে</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        আপনার NODE PRO Smart Controller কে নিয়ন্ত্রন করার জন্য এটিই একমাত্র অফিশিয়াল অ্যাপ। এই অ্যাপ এর মাধ্যমে আপনি খুব সহজেই আপনার রাউটারের অধীনে থেকে আপনার NODE PRO কে রিমোটলি কন্ট্রোল করতে পারবেন। এই অ্যাপ এর ডেডিকেটেড রিমোট সিস্টেম দিয়ে আপনি কয়েকশ মিলিসেকেন্ড এর মাধ্যমেই আপনার লোড গুলোওকে কন্ট্রোল করতে পারবেন। অ্যাপটি অনেক লাইটওয়েট হওায় আপনার ফোনের ওপর অতিরিক্ত চাপ ফেলাবে না। এই অ্যাপ দিয়েই আপনি NODE PRO এর ড্যাশবোর্ড ও দেখতে পারবেন এবং নিয়ন্ত্রন করতে পারবেন কোনো প্রকার থার্ডপার্টি ব্রাউজার ছাড়াই।
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                        <h3 class="font-bold text-blue-800 mb-2">প্রধান ফিচারসমূহ:</h3>
+                        <ul class="list-disc list-inside text-blue-900 space-y-1">
+                            <li>ওয়াইফাই কনফিগারেশন সেটআপ</li>
+                            <li>লাইটওয়েট তাই ফোনের ওপর প্রভাব ফেলায় না</li>
+                            <li>খুব অল্প সময়ে অ্যাপ ওপেন হয়</li>
+                            <li>একবার ওপেন করলে পরেরবার মিলি সেকেন্ডেই ওপেন হয়</li>
+                            <li>রিমটের বিকল্প খুব ভালো ভাবে কাজ করতে পারে</li>
+                            <li>রিমোট কন্ট্রোল ইন্টারনেট ছাড়াই কাজ করে</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">কিভাবে ব্যবহার করবেন? (Instructions)</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <span class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center font-bold shrink-0">১</span>
+                            <p class="text-gray-600">প্রথমে ডাউনলোড বাটন থেকে আপনার ডিভাইস অনুযায়ি অ্যাপটি ইন্সটল কর।</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center font-bold shrink-0">২</span>
+                            <p class="text-gray-600">আপনার NODE PRO Smart Controller এর Acces Point থেকে রাউটারের সাথে NODE PRO কে কানেক্ট করিয়ে দিন।</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center font-bold shrink-0">৩</span>
+                            <p class="text-gray-600">আপনার ওয়াইফাই রাউটারের অ্যাডমিন প্যানেল থেকে NODE PRO এর আইপি অ্যাড্রেস টি কপি করুন।</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center font-bold shrink-0">৪</span>
+                            <p class="text-gray-600">অ্যাপ এ ঢুকে রিমোটের ওপরে Settings বাটনে ক্লিক করে আপনার NODE PRO  এর আইপি টি বসিয়ে দিন।</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center font-bold shrink-0">৫</span>
+                            <p class="text-gray-600">আপনার অ্যাপ এখন ব্যবহারের জন্য প্রস্তুত।</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-3xl h-fit border border-gray-100">
+                <h3 class="text-lg font-bold mb-6 text-slate-900">অ্যাপ ইনফরমেশন</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="text-gray-500">ভার্সন</span>
+                        <span class="font-medium">v1.০.৪ (Stable)</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="text-gray-500">আপডেট</span>
+                        <span class="font-medium">১৫ জানুয়ারি ২০২৬</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="text-gray-500">ডেভেলপার</span>
+                        <span class="font-medium">QORVEX Technology BD</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="text-gray-500">অ্যান্ড্রয়েড রিকোয়ারমেন্ট</span>
+                        <span class="font-medium">৬.০ বা তার বেশি</span>
+                    </div>
+                </div>
+                <div class="mt-8 text-center bg-white p-4 rounded-xl border">
+                    <p class="text-xs text-gray-400 mb-2">QR কোড স্ক্যান করুন</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://qorvexbd.com/app-np.html" alt="QR Code" class="mx-auto w-32 h-32">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX Technology BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">info@qorvexbd.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+88 09638306716</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // ডাউনলোড ড্রপডাউন টগল ফাংশন
+        function toggleDropdown() {
+            document.getElementById('downloadDropdown').classList.toggle('show');
+        }
+
+        // ড্রপডাউন মেনুর বাইরে ক্লিক করলে যেন বন্ধ হয়ে যায়
+        window.onclick = function(event) {
+            if (!event.target.matches('.download-btn') && !event.target.matches('.download-btn *')) {
+                var dropdowns = document.getElementsByClassName("download-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অ্যাপস ও কাস্টম সফটওয়্যার | QORVEX BD</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* কার্ড ও সেকশন স্টাইল (প্রোডাক্ট পেজের সাথে মিল রেখে) */
+        .app-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+            background-color: #f8fafc;
+        }
+        .app-card:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        /* ফিচারড কার্ডের গ্লো ও প্রিমিয়াম লুক ইফেক্ট */
+        .featured-card {
+            border: 1px solid #bfdbfe;
+            background: linear-gradient(145deg, #f0fdf4 0%, #f8fafc 100%);
+        }
+        .custom-cta {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">হোম</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="services.html">সেবাসমূহ</a>
+            <a href="projects.html">প্রজেক্ট</a>
+            <a href="products.html">প্রোডাক্টস</a> 
+            <a href="research.html">রিসার্চ</a>
+            <a href="app.html" style="color: #3b82f6;">অ্যাপ্লিকেশন্স</a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto text-center py-16 px-6">
+        <h1 class="text-5xl md:text-6xl font-black mb-6 tracking-tight" style="color: #001f3f;">আমাদের <span class="text-blue-600">সফটওয়্যার</span> ইকোসিস্টেম</h1>
+        <p class="text-xl max-w-3xl mx-auto text-gray-600">আমাদের ডিভাইসগুলোকে নিয়ন্ত্রন করার জন্য এবং অত্যাধিক নিরাপত্তা নিশ্চিত করার জন্য আমাদের নিজস্ব অ্যাপলিকেশন গুলো দেখে নিন।</p>
+    </header>
+
+    <section class="container mx-auto px-6 mb-16">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="h-1 w-12 bg-amber-500"></div>
+            <h2 class="text-3xl font-bold" style="color: #001f3f;">Featured <span class="text-amber-500">Apps</span></h2>
+        </div>
+        
+        <!-- গ্রিড কন্টেইনার (এটি অটোমেটিক ২টি কার্ড পাশাপাশি সেট করবে) -->
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <!-- ১ম ফিচারড কার্ড (QORVEX Technology BD) -->
+            <div class="app-card featured-card p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center h-full relative overflow-hidden">
+                <span class="absolute top-4 right-4 bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fas fa-star mr-1"></i> Featured</span>
+                
+                <div class="w-48 h-48 bg-white rounded-2xl overflow-hidden border border-gray-100 flex items-center justify-center p-4 shrink-0">
+                    <img src="assets/images/apps/app-qtbd.jpg" alt="QORVEX Technology BD App" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3710/3710263.png';">
+                </div>
+                
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: #001f3f;">QORVEX Technology BD</h3>
+                        <span class="bg-blue-100 text-blue-700 text-[11px] font-bold px-2 py-0.5 rounded-md uppercase inline-block mb-3">Android, iOS, Windows, Linux</span>
+                        <p class="text-gray-600 text-sm mb-6">আমাদের ওয়েবসাইট এর পাশাপাশি চলে এলো আমাদের অ্যাপ।এখন আপনি খুব সহজেই আমাদের অ্যাপ এর মাধ্যমে আমাদের সকল সেবা গ্রহন করতে পারবেন।</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-xs font-bold text-green-600"><i class="fas fa-check-circle mr-1"></i> Available Soon</span>
+                        <a href="app-qtbd.html" class="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md text-sm font-bold">
+                            <i class="fas fa-info-circle mr-1"></i> বিস্তারিত দেখুন
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ২য় নতুন ফিচারড কার্ড (এখানে তোমার ২য় অ্যাপের তথ্য বসাবে) -->
+            <div class="app-card featured-card p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center h-full relative overflow-hidden">
+                <span class="absolute top-4 right-4 bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fas fa-star mr-1"></i> Featured</span>
+                
+                <!-- ২য় অ্যাপের ইমেজ পাথ (যেমন: app-np.jpg) -->
+                <div class="w-48 h-48 bg-white rounded-2xl overflow-hidden border border-gray-100 flex items-center justify-center p-4 shrink-0">
+                    <img src="assets/images/apps/app-np.jpg" alt="NODE PRO Control App" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3710/3710263.png';">
+                </div>
+                
+                <!-- ২য় অ্যাপের টেক্সট ও বাটন বিবরণী -->
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: #001f3f;">NODE PRO Control</h3>
+                        <span class="bg-blue-100 text-blue-700 text-[11px] font-bold px-2 py-0.5 rounded-md uppercase inline-block mb-3">Android, iOS, Windows, Linux</span>
+                        <p class="text-gray-600 text-sm mb-6">NODE PRO Control অ্যাপ দিয়ে আপনার NODE PRO কে সহজেই এবং সেকেন্ডেই নিয়ন্ত্রন করুন। NODE PRO এর সকল ফিচার উপভোগ করুন এক অ্যাপেই।</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-xs font-bold text-green-600"><i class="fas fa-check-circle mr-1"></i> Available</span>
+                        <a href="app-np.html" class="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md text-sm font-bold">
+                            <i class="fas fa-info-circle mr-1"></i> বিস্তারিত দেখুন
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <main class="container mx-auto px-6 mb-24">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-gray-100 pb-6">
+            <div class="flex items-center gap-4">
+                <div class="h-1 w-12 bg-blue-600"></div>
+                <h2 class="text-3xl font-bold" style="color: #001f3f;">QORVEX <span class="text-blue-600">Application</span> Gallery</h2>
+            </div>
+            
+            <div class="relative w-full md:w-80">
+                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="appSearch" onkeyup="searchApps()" placeholder="Search Apps" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm">
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="appsGrid">
+            
+            <div class="app-card p-8 rounded-3xl flex flex-col h-full app-item" data-name="qorvex technology bd main app">
+                <div class="aspect-square bg-white rounded-2xl mb-6 overflow-hidden border border-gray-100 flex items-center justify-center p-4">
+                    <img src="assets/images/apps/app-qtbd.jpg" alt="QORVEX Technology BD" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3710/3710263.png';">
+                </div>
+                <h3 class="text-2xl font-bold mb-2" style="color: #001f3f;">QORVEX Technology BD</h3>
+                
+                <div class="mb-4 flex items-center gap-3">
+                    <div class="flex flex-col">
+                        <span class="text-gray-500 text-xs">প্ল্যাটফর্ম</span>
+                        <span class="text-lg font-black text-blue-600">Android, iOS, Windows, Linux</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6 flex-grow text-sm">আমাদের ওয়েবসাইট এর পাশাপাশি চলে এলো আমাদের অ্যাপ।এখন আপনি খুব সহজেই আমাদের অ্যাপ এর মাধ্যমে আমাদের সকল সেবা গ্রহন করতে পারবেন।</p>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Official</span>
+                    <a href="app-qtbd.html" class="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md text-sm">
+                        <i class="fas fa-info-circle mr-1"></i> বিস্তারিত
+                    </a>
+                </div>
+            </div>
+       <!-- নতুন অ্যাপ কার্ড শুরু (app-item) -->
+<div class="app-card p-8 rounded-3xl flex flex-col h-full app-item" data-name="node pro control app">
+    
+    <!-- ১. অ্যাপের লোগো/ইমেজ সেকশন -->
+    <div class="aspect-square bg-white rounded-2xl mb-6 overflow-hidden border border-gray-100 flex items-center justify-center p-4">
+        <img src="assets/images/apps/app-np.jpg" alt="NODE PRO Control" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3710/3710263.png';">
+    </div>
+    
+    <!-- ২. অ্যাপের নাম -->
+    <h3 class="text-2xl font-bold mb-2" style="color: #001f3f;">NODE PRO Control</h3>
+    
+    <!-- ৩. প্ল্যাটফর্ম ইনফো -->
+    <div class="mb-4 flex items-center gap-3">
+        <div class="flex flex-col">
+            <span class="text-gray-500 text-xs">প্ল্যাটফর্ম</span>
+            <span class="text-lg font-black text-blue-600">Android, Windows, iOS, Linux</span>
+        </div>
+    </div>
+    
+    <!-- ৪. সংক্ষিপ্ত বিবরণ (ডেসক্রিপশন) -->
+    <p class="text-gray-600 mb-6 flex-grow text-sm">আপনার NODE PRO Smart Home Controller কে নিয়ন্ত্রন করুন NODE PRO Control এর মাধ্যমে। সবচেয়ে সহজে সবচেয়ে কম সময়ে NODE PRO এর সমস্ত ফিচার উপভোগ করুন এক অ্যাপ এ। </p>
+    
+    <!-- ৫. স্ট্যাটাস ব্যাজ এবং বাটন -->
+    <div class="flex items-center justify-between mt-auto">
+        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Official</span>
+        <a href="app-np.html" class="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md text-sm">
+            <i class="fas fa-info-circle mr-1"></i> বিস্তারিত
+        </a>
+    </div>
+</div>
+<!-- নতুন অ্যাপ কার্ড শেষ -->
+        </div> <div id="noResult" class="text-center py-16 hidden">
+            <i class="fas fa-search-minus text-5xl text-gray-300 mb-4"></i>
+            <p class="text-gray-500 text-lg">Sorry, App not found!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="assets/images/logo.png" alt="Footer Logo">
+                <p class="footer-description">
+                    QORVEX Technology BD বাংলাদেশের একটি স্টার্টআপ প্রযুক্তি গবেষণা প্রতিষ্ঠান। আমরা আধুনিক রোবোটিক্স ও আইওটি সলিউশন নিয়ে নিয়মিত ভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য অটোনোমাস বাংলাদেশ গড়ার।
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-col">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li><a href="team.html">টিম মেম্বার</a></li>
+                    <li><a href="careers.html">ক্যারিয়ার</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>রিসোর্স</h4>
+                <ul>
+                    <li><a href="projects.html">প্রজেক্ট আর্কাইভ</a></li>
+                    <li><a href="research.html">গবেষণাপত্র</a></li>
+                    <li><a href="#">ডকুমেন্টেশন</a></li>
+                    <li><a href="#">টিউটোরিয়াল</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>সরাসরি যোগাযোগ</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                        <p class="text-sm text-gray-400">রংপুর সদর, রংপুর বিভাগ,<br>বাংলাদেশ</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <p class="text-sm text-gray-400">info@qorvexbd.com</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-blue-500"></i>
+                        <p class="text-sm text-gray-400">+88 09638306716</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QORVEX BD. All Rights Reserved. <br> Powered by Technical Study Base</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // লেভেনস্টাইন অ্যালগরিদম (টাইপিং এর ভুলের গভীরতা পরিমাপের জন্য)
+        function levenshteinDistance(str1, str2) {
+            const track = Array(str2.length + 1).fill(null).map(() => Array(str1.length + 1).fill(null));
+            for (let i = 0; i <= str1.length; i += 1) track[0][i] = i;
+            for (let j = 0; j <= str2.length; j += 1) track[j][0] = j;
+            for (let j = 1; j <= str2.length; j += 1) {
+                for (let i = 1; i <= str1.length; i += 1) {
+                    const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                    track[j][i] = Math.min(
+                        track[j][i - 1] + 1,
+                        track[j - 1][i] + 1,
+                        track[j - 1][i - 1] + indicator
+                    );
+                }
+            }
+            return track[str2.length][str1.length];
+        }
+
+        // ইন্টেলিজেন্ট সার্চ ইঞ্জিন ফাংশন
+        function searchApps() {
+            let input = document.getElementById('appSearch').value.toLowerCase().trim();
+            let appItems = document.getElementsByClassName('app-item');
+            let hasResults = false;
+
+            // সার্চ ইনপুট খালি থাকলে অল অ্যাপস শো করবে
+            if (input === "") {
+                for (let i = 0; i < appItems.length; i++) {
+                    appItems[i].style.display = "flex";
+                }
+                document.getElementById('noResult').classList.add('hidden');
+                return;
+            }
+
+            let searchWords = input.split(/\s+/);
+
+            for (let i = 0; i < appItems.length; i++) {
+                let appData = appItems[i].getAttribute('data-name').toLowerCase();
+                let appWords = appData.split(/\s+/);
+                
+                // অ্যাপের নামের আদ্যক্ষর (যেমন: dca, npsh) দিয়ে শর্টকাট ইনিশিয়াল ম্যাপিং
+                let appInitials = appWords.map(word => word[0]).join(''); 
+                
+                let isMatch = false;
+
+                // ১. পারশিয়াল বা ইনিশিয়াল ম্যাচ (মাত্র ১ বা ২ অক্ষরে ফিল্টারিং - যেমন "ds" বা "nh")
+                if (input.length <= 3 && (appInitials.includes(input) || appWords.some(word => word.startsWith(input)))) {
+                    isMatch = true;
+                } 
+                // ২. রেগুলার সাবস্ট্রিং ডিরেক্ট ম্যাচ 
+                else if (appData.includes(input)) {
+                    isMatch = true;
+                } 
+                // ৩. ফাজি লজিক ম্যাচ (বানান ভুল হলে রিকভার করার জন্য)
+                else {
+                    for (let sw of searchWords) {
+                        if (sw.length < 2) continue; // খুব ছোট বানান ভুলের হিসাব বাদ
+                        for (let aw of appWords) {
+                            let distance = levenshteinDistance(sw, aw);
+                            let maxAllowedErrors = aw.length > 5 ? 2 : 1; // বড় শব্দের জন্য ২টি, ছোট শব্দের জন্য ১টি অক্ষরের ভুল গ্রহণযোগ্য
+                            if (distance <= maxAllowedErrors) {
+                                isMatch = true;
+                                break;
+                            }
+                        }
+                        if (isMatch) break;
+                    }
+                }
+
+                // লাইভ গ্রিড শো/হাইড কন্ট্রোল
+                if (isMatch) {
+                    appItems[i].style.display = "flex";
+                    hasResults = true;
+                } else {
+                    appItems[i].style.display = "none";
+                }
+            }
+
+            // রেজাল্ট স্টেটাস মেসেজ আপডেট
+            let noResultDiv = document.getElementById('noResult');
+            if (hasResults) {
+                noResultDiv.classList.add('hidden');
+            } else {
+                noResultDiv.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
